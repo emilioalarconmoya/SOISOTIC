@@ -1,0 +1,125 @@
+﻿Imports Clases
+Imports Modulos
+Imports Clases.Web
+Imports System
+Imports System.Data
+Partial Class modulo_administracion_mantenedor_clasificador_m
+    Inherits System.Web.UI.Page
+    Dim objWeb As New CWeb
+    Dim objSession As CSession
+    Dim objLookups As New Clookups
+    Dim objCSql As New CSql
+    Dim objMantenedorClasificador As New CMantenedorClasificador
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Try
+            objWeb = New CWeb
+            objWeb.ChequeaSession(objSession)
+            '***********************************************************************************
+            body.Attributes.Clear()
+            If Not Page.IsPostBack Then
+                lblPie.Text = Parametros.p_PIE
+                ViewState("codClasificador") = Request("codClasificador")
+                ViewState("rutCliente") = Request("rutCliente")
+                ViewState("nombre") = Request("nombre")
+
+                objMantenedorClasificador = New CMantenedorClasificador
+                Session("objeto") = objMantenedorClasificador
+
+                If Not ViewState("codClasificador") Is Nothing Then
+
+                    ViewState("modo") = "actualizar"
+                    objMantenedorClasificador = New CMantenedorClasificador
+                    Me.txtCodClasificador.Text = ViewState("codClasificador")
+                    Me.txtCodClasificador.Enabled = False
+                    Me.txtNomClasificador.Text = Request("nombre")
+                    objWeb.LlenaDDL(Me.ddlNomEmpresas, objLookups.empresas, "rut", "razon_social")
+                    Me.ddlNomEmpresas.SelectedValue = RutUsrALng(ViewState("rutCliente"))
+                    Me.ddlNomEmpresas.Enabled = False
+                Else
+                    If Request("codClasificador") = "" Then
+                        'If Request("nuevo") = "si" Then
+                        ViewState("modo") = "insertar"
+                        objWeb.LlenaDDL(Me.ddlNomEmpresas, objLookups.empresas, "rut", "razon_social")
+
+                        'End If
+                    End If
+                    'Me.btnGrabar.Attributes.Add("Onclick", "if (typeof(Page_ClientValidate) == 'function')" & _
+                    '                "Page_ClientValidate();return confirm('" & Me.hdfConfirmacionGuardar.Value & "');")
+
+                End If
+            End If
+
+        Catch ex As Exception
+            EnviaError("mantenedor_clasificador_m.aspx:Page_Load->" & ex.Message)
+        End Try
+    End Sub
+    Public Sub Consultar()
+        Try
+            objMantenedorClasificador = New CMantenedorClasificador
+            objMantenedorClasificador.CodClasificador = Me.txtCodClasificador.Text
+            objMantenedorClasificador.Nombre = Me.txtNomClasificador.Text
+            objMantenedorClasificador.RutEmpresa = Me.ddlNomEmpresas.SelectedValue
+            objMantenedorClasificador.NombreEmpresa = Me.ddlNomEmpresas.SelectedItem.Text
+
+            If ViewState("modo") = "actualizar" Then
+                objMantenedorClasificador.CodClasificador = Me.txtCodClasificador.Text
+                objMantenedorClasificador.Nombre = Me.txtNomClasificador.Text
+                objMantenedorClasificador.RutEmpresa = Me.ddlNomEmpresas.SelectedValue
+                objMantenedorClasificador.Actualizar()
+                If objMantenedorClasificador.Exito Then
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                                           & "alert('¡Registro actualizado exitosamente!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                Else
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                               & "alert('¡Imposible realizar la operación!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                End If
+
+            ElseIf ViewState("modo") = "insertar" Then
+                objMantenedorClasificador.CodClasificador = Me.txtCodClasificador.Text
+                objMantenedorClasificador.Nombre = Me.txtNomClasificador.Text
+                objMantenedorClasificador.RutEmpresa = Me.ddlNomEmpresas.SelectedValue
+                objCSql.ExisteRegistroClasificador(Me.ddlNomEmpresas.SelectedValue, Me.txtCodClasificador.Text, "Clasificador", "rut", "cod_clasificador")
+                If objCSql.ExisteRegistroClasificador(Me.ddlNomEmpresas.SelectedValue, Me.txtCodClasificador.Text, "Clasificador", "rut", "cod_clasificador") Then
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                                                               & "alert('¡Ya existe un código ligado a esta empresa!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                    Exit Sub
+
+                End If
+                
+                objMantenedorClasificador.Insertar()
+                If objMantenedorClasificador.Exito Then
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                                           & "alert('¡Registro insertado exitosamente!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                Else
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                               & "alert('¡Imposible realizar la operación!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                End If
+            Else
+                objMantenedorClasificador.CodClasificador = Me.txtCodClasificador.Text
+                objMantenedorClasificador.Nombre = Me.txtNomClasificador.Text
+                objMantenedorClasificador.RutEmpresa = Me.ddlNomEmpresas.SelectedValue
+                objMantenedorClasificador.Insertar()
+                If objMantenedorClasificador.Exito Then
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                                           & "alert('¡Registro insertado exitosamente!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                Else
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                               & "alert('¡Imposible realizar la operación!');document.location=('./mantenedor_clasificador_m.aspx');</script>")
+                End If
+
+            End If
+
+        Catch ex As Exception
+            EnviaError("mantenedor_clasificador_m.aspx:Consultar->" & ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub btnGrabar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGrabar.Click
+        Consultar()
+
+    End Sub
+
+    Protected Sub btnVolver_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Response.Redirect("mantenedor_clasificador.aspx")
+    End Sub
+End Class

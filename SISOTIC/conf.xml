@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuracion>
+  <!--<host>Srv-prod-bd2</host>-->
+   <!--<host>Srv-testing2</host>-->
+  <host>Srv-informa-bd2</host>
+  <user>oticbanca</user>
+  <pass>5747585253505E5B50</pass>
+  <bd>OticBancos</bd>
+  <bdconex>SQL</bdconex>
+  <bdtipoconex>OLEDB</bdtipoconex>
+  <dirvirtualmail>http://localhost:2316/SisOtic</dirvirtualmail>
+  <dirfisico>\\Srv-informatica\desarrollo_ti\04-SISOTIC.NET\BANCA\05-SRC\SISOTIC</dirfisico>
+  <servidorcorreo>mx.soleduc.cl</servidorcorreo>
+  <usuariocorreo>eee@soleduc.cl</usuariocorreo>
+  <mailavisomdb>pruebas@soleduc.cl</mailavisomdb>
+  <empresa>OTIC DE LA BANCA</empresa>
+  <nombreempresalargo>CORPORACION DE LA BANCA PARA LA PROMOCION DE LA CAPACITACION</nombreempresalargo>
+  <rutempresa>12-4</rutempresa>
+  <mododebug>0</mododebug>
+  <seccion>Informatica</seccion>
+  <firmamail>Soleduc Capacitación</firmamail>
+  <maxporcadmin>15</maxporcadmin>
+  <fonoempresa>228894400</fonoempresa>
+  <faxempresa>--</faxempresa>
+  <personafirma></personafirma>
+  <direccionempresa>MIRAFLORES 130 - PISO 17 - SANTIAGO - REGION METROPOLITANA</direccionempresa>
+  <giroempresa>SERVICIOS</giroempresa>
+  <servidorcorreosmtp>smtp.gmail.com</servidorcorreosmtp>
+  <usuariocorreonet>5B5241505258445952595E5F70435E5D525D4C5B1D5F5445</usuariocorreonet>
+  <passusuariocorreonet>17405E5D541B544D521E</passusuariocorreonet>
+  <tipoenviocorreo>net</tipoenviocorreo>
+  <nombreoc></nombreoc>
+  <cargooc></cargooc>
+  <cuentaexccapacitacion>1</cuentaexccapacitacion>
+  <passwordexcel>1234</passwordexcel>
+  <tananofirma>100</tananofirma>
+  <tananolinea>50.0F</tananolinea>
+  <diaCertificadoaporte>a más tardar el día 25 de Enero de</diaCertificadoaporte>
+  <diasComunicacion>2</diasComunicacion>
+  <email1OC>OPERACIONES@BANOTIC.CL</email1OC>
+  <email2OC>MAUREEN REYES (MAUREEN.REYES@BANOTIC.CL).</email2OC>
+  <email3OC>FACTURAS@BANOTIC.CL</email3OC>
+  <redireccionar>login.aspx</redireccionar>
+  <pie>
+    <![CDATA[
+     
+    ]]>
+  </pie>
+  <requisitos_y_condiciones>
+    <![CDATA[
+    
+    <p align="justify">
+                                               <strong>1º ES OBLIGACIÓN DEL OTEC </strong>
+            REVISAR QUE LA OC SE ENCUENTRE CON TODOS SUS DATOS CORRECTOS ANTES DE LA FECHA DE INICIO, RECLAMOS POSTERIORES NO SERÁ RESPONSABILIDAD DEL OTIC.
+        </p>
+        <p align="justify">
+                                               <strong>2º ACUSAR RECIBO DE ESTA OC </strong>
+            AL OTIC Y EMPRESA, EN SEÑAL DE CONFIRMACIÓN QUE LA INSCRIPCIÓN DE LOS PARTICIPANTES DESIGNADOS POR LA EMPRESA ESTÁ EN ORDEN.
+        </p>
+               <p align="justify">
+                                               <strong>3° EL CORRESPONDIENTE PAGO DE LA ACTIVIDAD, SE REALIZARA UNA VEZ QUE ESTA SE ENCUENTRE 
+                                               FINALIZADA</strong>
+            , Y LOS PARTICIPANTES DEBERAN TENER REGISTRADA UNA ASISTENCIA EQUIVALENTE AL 75% DE SU DURACION TOTAL. EN CASO CONTRARIO, EL IMPORTE 
+            CORRESPONDIENTE SERA DE CARGO DE LA EMPRESA A LA QUE PERTENECEN.
+             <ul type="disc">
+                                               <li>SI HAY ALUMNOS QUE NO CUENTEN CON EL 75% DE ASISTENCIA MÍNIMA, HACER ENVÍO DEL CORRESPONDIENTE 
+                                               CERTIFICADO DE ASISTENCIA Y SOLICITAR LA RECTIFICACIÓN DE LA 
+                                               OC INICIAL A <strong><u>OPERACIONES@BANOTIC.CL</u></strong> 
+                                               </li>
+             </ul>
+        </p>
+        <p align="justify">
+                <strong>4° SE CONSIDERARA ACTIVIDAD NO EJECUTADA</strong>
+            , SI DENTRO DE LOS 
+            <strong>10 DIAS HABILES </strong>
+            SIGUIENTES A LA FECHA DE TERMINO DEL CURSO, NO SE HAN RECEPCIONADO LA(S) FACTURA(S) Y EL RESPECTIVO INFORME DE ASISTENCIA  Y 
+            DECLARACIONES JURADAS SI CORRESPONDEN.
+        </p>
+        <p align="justify">
+                <strong>5° SERA REQUISITO INDISPENSABLE PARA LA CANCELACION DE LA FACTURA</strong>
+            , ADJUNTAR A ESTA EL INFORME DE ASISTENCIA O DECLARACION JURADA EN CASO DE CURSOS E-LEARNING O DISTANCIA,  DE LOS ALUMNOS INSCRITOS EN ESTA 
+            ORDEN DE COMPRA. IMPORTANTE: EN CASO DE PARTICIPANTES QUE NO CUMPLAN CON LA ASISTENCIA MINIMA EXIGIDA POR SENCE (LEY 19.518), SE DEBERAN 
+            REBAJAR DE LA FACTURACION DEL MONTO FRANQUICIABLE (OTIC), LOS VALORES CORRESPONDIENTES POR ESTE CONCEPTO. LA DIFERENCIA PRODUCIDA NO AFECTA 
+            A FRANQUICIA TRIBUTARIA; DEBERA FACTURARSE A LA EMPRESA COMO GASTO.
+        </p>
+        <p>
+                <strong>6° LOS DATOS QUE DEBE CONTENER LA FACTURA SON LOS SIGUIENTES:</strong>
+        </p>
+        <ul type="disc">
+                                               <li>IDENTIFICACION DEL OTIC (RAZON SOCIAL Y RUT)</li>
+                                               <li>NOMBRE DE LA ACTIVIDAD DE CAPACITACION.</li>
+                                               <li>RUT Y RAZON SOCIAL DE LA EMPRESA BENEFICIARIA DE LA ACTIVIDAD.</li>
+                                               <li>CODIGO SENCE.</li>
+                                               <li>CANTIDAD DE HORAS CRONOLOGICAS.</li>
+                                               <li>FECHAS DE INICIO Y TERMINO.</li>
+                                               <li>NOMBRE Y RUT DE LOS TRABAJADORES CAPACITADOS, O EN SU DEFECTO POR RAZONES DE ESPACIO, SOLO 
+                                               NUMERO DE REGISTRO DE ACCION.</li>
+        </ul>
+        <p align="justify">
+                (EN EL CASO QUE SE REQUIERA MODIFICAR LA FACTURA A FIN DE CORREGIR O AGREGAR DATOS, SE DISPONDRA DE DOS ALTERNATIVAS: ANULAR LA 
+                FACTURA CON UNA NOTA DE CREDITO, Y EMITIR OTRA FACTURA, O BIEN GESTIONAR UNA NOTA DE CREDITO PARA AGREGAR O CORREGIR EL DATO EN CUESTION.)
+        </p>
+        <p align="justify">
+                <strong>7° PARA LOS CURSOS E-LEARNING Y/O DISTANCIA QUE NO CUENTEN CON TODOS LOS RESPALDOS (DECLARACIONES JURADAS Y CI) DE EL O 
+                LOS PARTICIPANTES </strong>
+            , SE LIQUIDARAN DE ACUERDO A LA DOCUMENTACION EXISTENTE Y SE SOLICITARA  LA NOTA DE CREDITO PARA AJUSTAR LOS VALORES. ESTE PROCESO 
+            PUEDE DEMORAR EL PAGO DE LA FACTURA CORRESPONDIENTE.
+        </p>
+        <p align="justify">
+                <strong>8 ° EL CERTIFICADO DE ASISTENCIA Y DECLARACIONES JURADAS </strong>
+            DEBE SER EN LOS FORMATOS SOLICITADOS POR SENCE Y CON SU RESPECTIVA FIRMA DIGITAL.
+        </p>
+        <p align="justify">
+                <strong>9° POR SU PARTE LOS DATOS QUE DEBE CONTENER EL CERTIFICADO DE ASISTENCIA </strong>
+            SON LOS ESPECIFICADOS EN EL FORMATO SENCE (ELECTRONICO CON FIRMA DIGITAL), SALVO QUE EL SENCE DISPONGA ALGUN SISTEMA QUE PERMITA 
+            AUTOMATIZAR LA CERTIFICACION DE LA ASISTENCIA. EN EL CASO DE LOS CURSOS E-LEARNING- DISTANCIA PARA PROCEDER SE SOLICITARA DECLARACION 
+            JURADA SIMPLE DEL OTEC CUYO FORMATO ESTA DISPONIBLE EN <u>WWW.SENCE.CL</u> U OTRO MECANISMO QUE EL SENCE DISPONGA.
+        </p>
+        <!--<p align="justify">
+                <strong>10° PARA LOS PARTICIPANTES QUE FIGUREN SIN NOMBRE EN EL CERTIFICADO DE ASISTENCIA (LCE)</strong>)
+            , EL OTEC EJECUTOR DEL CURSO DEBERA SOLICITAR A ACEPTA EL ENROLAMIENTO DEL O LOS ALUMNOS, ENVIANDO MEDIANTE EL FORMULARIO 
+            DE SOPORTE DEL LCE (HTTP://SOPORTESENCE.ACEPTA.COM/), UNA COPIA DE LA CEDULA DE IDENTIDAD POR AMBOS LADOS. ESTO DEBERA REALIZARSE 
+            DENTRO DE LOS PLAZOS ESTABLECIDOS PARA LA LIQUIDACION DE LOS CURSOS ACOGIDOS AL USO DE LA FRANQUICIA TRIBUTARIA. 
+        </p>-->
+        <!--<p align="justify">
+                SI POR ALGUNA RAZON NO FUESE POSIBLE ACTUALIZAR ESTA INFORMACION DENTRO DE LOS PLAZOS DEFINIDOS, EL OTEC PODRA MODIFICAR 
+                EL CERTIFICADO DE ASISTENCIA, RETIRANDO DEL MISMO A AQUELLOS PARTICIPANTES CON INFORMACION INCOMPLETA PUDIENDO DE ESTA FORMA 
+                LIQUIDAR A LOS RESTANTES.
+        </p>-->
+        <p align="justify">
+                <strong>10° LAS FACTURAS COSTO OTIC (VALOR SENCE) DEBEN ENVIARSE </strong> 
+            AL CORREO <strong><u>FACTURAS@BANOTIC.CL</u></strong> ENVIARSE O DIRECCION MIRAFLORES 130 PISO 17 , SANTIAGO (DIRECCION OTIC DE LA BANCA), ADJUNTANDO 
+            COPIA DE ESTA ORDEN DE COMPRA. LAS FACTURAS DE COSTO EMPRESA DEBEN ENVIARSE DIRECTAMENTE A LA EMPRESA, CON COPIA AL OTIC.
+        </p>
+        <p align="justify">
+                <strong>11° NUESTRO OTIC CUENTA CON EL SELLO PRO PYME </strong>
+                (PAGO MÁXIMO A 30 DIAS CON LA DOCUMENTACIÓN COMPLETA DEL CURSO), VER INSTRUCTIVO EN NUESTRA PAGINA WEB.  
+                <u>http://www.banotic.cl/preguntas-frecuentes.html</u>
+        </p>
+          <p>
+                <strong>12° CUALQUIER RECLAMO DE PAGO </strong>DEBE REALIZARSE AL CORREO <strong><u>FACTURAS@BANOTIC.CL</u></strong>
+        </p>
+        <p><strong>13°</strong> COMO MEJORA DE NUESTRO SERVICIO, SE SUGIERE QUE EL PAGO SE REALICE POR MEDIO DE 
+          <strong>TRANSFERENCIA ELECTRONICA</strong>, SOLICITAMOS EL ENVÍO DE LOS SIGUIENTES DATOS ADJUNTO A LA FACTURA:
+        </p>
+        <ul type="disc">
+                                               <li><strong>RAZON SOCIAL OTEC:</strong></li>
+                                               <li><strong>RUT:</strong></li>
+                                               <li><strong>BANCO:</strong></li>
+                                               <li><strong>N° CUENTA DE CORRIENTE:</strong></li>
+                                               <li><strong>NOMBRE DE CONTACTO:</strong></li>
+                                               <li><strong>FONO:</strong></li>
+                                               <li><strong>CORREO:</strong></li>
+        </ul>
+        <p align="justify">
+                <strong>14°</strong> HORARIOS DE PAGO Y RECEPCION DE DOCUMENTOS: DE LUNES A JUEVES 09:00 A 14:00 HORAS.
+        </p>
+        <p align="justify">
+                <strong>15°</strong> PARA CONSULTAS SOBRE EL PAGO DE FACTURAS COMUNICARSE DIRECTAMENTE AL: 228894400 
+                O <strong><u>FACTURAS@BANOTIC.CL</u></Sstrong> 
+        </p>
+        <p align="justify">
+                <br>
+               DUDAS O CONSULTAS DE ESTA OC, CONTACTARSE CON EL AREA DE OPERACIONES AL 228894400.
+        </p>
+        <p align="justify">
+                SALUDA ATENTAMENTE A USTED.
+        </p>
+
+    ]]>
+  </requisitos_y_condiciones>
+</configuracion>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Curso" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Curso" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cabecera">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rut_empresa" type="xs:string" minOccurs="0" />
+              <xs:element name="cod_tipo_actividad" type="xs:integer" minOccurs="0" />
+              <xs:element name="comite_bipartito" type="xs:boolean" minOccurs="0" />
+              <xs:element name="deteccion_necesidades" type="xs:boolean" minOccurs="0" />
+              <xs:element name="nro_participantes" type="xs:integer" minOccurs="0" />
+              <xs:element name="lugar_ejec_sence" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_direccion" type="xs:string" minOccurs="0" />
+              <xs:element name="ciudad" type="xs:string" minOccurs="0" />
+              <xs:element name="cod_comuna" type="xs:integer" minOccurs="0" />
+              <xs:element name="año_inicio" type="xs:integer" minOccurs="0" />
+              <xs:element name="observacion" type="xs:string" minOccurs="0" />
+              <xs:element name="cod_modalidad" type="xs:integer" minOccurs="0" />
+              <xs:element name="cod_sence" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_inicio" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_fin" type="xs:string" minOccurs="0" />
+              <xs:element name="horas_complementarias" type="xs:integer" minOccurs="0" />              
+              <xs:element name="total" type="xs:long" minOccurs="0" />
+              <xs:element name="correl_interno" type="xs:string" minOccurs="0" />
+              <xs:element name="contacto_adicional" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Horario">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dia" type="xs:integer" minOccurs="0" />
+              <xs:element name="hora_inicio" type="xs:string" minOccurs="0" />
+              <xs:element name="hora_fin" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Participante">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rut_empleado" type="xs:string" />
+              <xs:element name="nombres" type="xs:string" />
+              <xs:element name="apellido_paterno" type="xs:string" />
+              <xs:element name="apellido_materno" type="xs:string" />
+              <xs:element name="sexo" type="xs:string" minOccurs="0" />
+              <xs:element name="cod_region" type="xs:integer" minOccurs="0" />
+              <xs:element name="cod_ocupacional" type="xs:integer" minOccurs="0" />
+              <xs:element name="franquicia" type="xs:double" minOccurs="0" />
+              <xs:element name="viaticos" type="xs:long" minOccurs="0" />
+              <xs:element name="traslados" type="xs:long" minOccurs="0" />
+              <xs:element name="cod_escolaridad" type="xs:integer" minOccurs="0" />
+              <xs:element name="fecha_nacimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="cod_comuna" type="xs:integer" minOccurs="0" />
+              <xs:element name="cod_clasificador" type="xs:string" />
+              <xs:element name="nombre_clasificador" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Cuentas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_tipo_cuenta" type="xs:integer" minOccurs="0" />
+              <xs:element name="monto_comunicado" type="xs:long" minOccurs="0" />
+              <xs:element name="cod_tipo_monto" type="xs:integer" minOccurs="0" />
+              <xs:element name="monto_liquidado" type="xs:long" minOccurs="0" />
+              <xs:element name="rut_reparto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

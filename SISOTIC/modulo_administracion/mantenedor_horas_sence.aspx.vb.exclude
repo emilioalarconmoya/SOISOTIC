@@ -1,0 +1,108 @@
+﻿Imports Clases
+Imports Modulos
+Imports Clases.Web
+Imports System
+Imports System.Data
+Partial Class modulo_administracion_mantenedor_horas_sence
+    Inherits System.Web.UI.Page
+    Dim objWeb As CWeb
+    Dim objSession As CSession
+    Dim objMantenedor As CMantenedorHoras
+    Dim objLookups As Clookups
+    Dim objCliente As CCliente
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Try
+            objWeb = New CWeb
+            objWeb.ChequeaSession(objSession)
+            objLookups = New Clookups
+            If Not Page.IsPostBack Then
+                'muestra pie de pagina
+                lblPie.Text = Parametros.p_PIE
+                objWeb.SeteaGrilla(grdResultados, 20)
+                'objWeb.LlenaDDL(Me.ddlAgno, objLookups.Agnos2, "Agno_v", "Agno_t")
+                If ViewState("PaginasAtras") Is Nothing Then
+                    ViewState("PaginasAtras") = 1
+                End If
+                Me.btnPopUpSence.Attributes.Add("onClick", "popup_pos('buscador_curso_sence.aspx?campo=txtCodigoSence', 'NewWindow2', 380, 700, 100, 100);return false;")
+            Else
+                ViewState("PaginasAtras") = ViewState("PaginasAtras") + 1
+            End If
+            'Me.btnVolver.OnClientClick = "javascript:window.history.go(-" & ViewState("PaginasAtras") & ");return false;"
+        Catch ex As Exception
+            EnviaError("mantenedor_horas_sence:Page_Load-->" & ex.Message)
+        End Try
+    End Sub
+    Public Sub Consultar()
+        objMantenedor = New CMantenedorHoras
+        'objMantenedor.Agno = Me.ddlAgno.SelectedValue
+        If Me.TxtAgno.Text = "" Then
+            objMantenedor.Agno = 0
+        Else
+            objMantenedor.Agno = Me.TxtAgno.Text
+        End If
+        If Me.txtValorHora.Text = "" Then
+            objMantenedor.ValorHoraSence = 0
+        Else
+            objMantenedor.ValorHoraSence = Me.txtValorHora.Text
+        End If
+        objMantenedor.CodigoSence = Trim(Me.txtCodigoSence.Text.Trim)
+        Dim dt As DataTable
+        dt = objMantenedor.Consultar()
+        objWeb.LlenaGrilla(grdResultados, dt)
+        objMantenedor = Nothing
+    End Sub
+    Protected Sub grdResultados_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles grdResultados.PageIndexChanging
+        grdResultados.PageIndex = e.NewPageIndex
+        Consultar()
+    End Sub
+    Protected Sub btnEditar_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim btnEditar As Button = CType(sender, Button)
+        Dim row As GridViewRow = CType(btnEditar.NamingContainer, GridViewRow)
+        Dim lblAgno As Label = CType(row.FindControl("lblAgno"), Label)
+        Dim hdfCodModalidad As HiddenField = CType(row.FindControl("hdfCodModalidad"), HiddenField)
+        Dim lblCodigoSence As Label = CType(row.FindControl("lblCodigoSence"), Label)
+        Response.Redirect("mantenedor_horas_sence_m.aspx?agno=" & lblAgno.Text & "&nuevo=no&codModalidad=" & hdfCodModalidad.Value & "&codigoSence=" & lblCodigoSence.Text)
+    End Sub
+    Protected Sub btnEliminar_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim btnEliminar As Button = CType(sender, Button)
+        Dim row As GridViewRow = CType(btnEliminar.NamingContainer, GridViewRow)
+        Dim lblAgno As Label = CType(row.FindControl("lblAgno"), Label)
+        objMantenedor = New CMantenedorHoras
+        objMantenedor.Agno = lblAgno.Text
+        If objMantenedor.Eliminar() Then
+            Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                        & "alert('¡Registro eliminado exitosamente!');document.location=('./mantenedor_horas_sence.aspx');</script>")
+            objMantenedor = Nothing
+        Else
+            Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                        & "alert('¡No se ha podido realizar la operación!');document.location=('./mantenedor_horas_sence.aspx');</script>")
+            objMantenedor = Nothing
+        End If
+    End Sub
+    Protected Sub btnConsultar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
+        Consultar()
+    End Sub
+
+    Protected Sub grdResultados_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles grdResultados.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim lblVigente As Label
+            lblVigente = CType(e.Row.FindControl("lblVigente"), Label)
+            If lblVigente.Text = False Then
+                lblVigente.Text = "NO"
+            Else
+                lblVigente.Text = "SÍ"
+            End If
+            Dim btnEliminar As Button
+            btnEliminar = CType(e.Row.FindControl("btnEliminar"), Button)
+            btnEliminar.OnClientClick = "return confirm('¿Esta seguro de eliminar este registro?');"
+        End If
+    End Sub
+
+    Protected Sub btnAgregar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
+        Response.Redirect("mantenedor_horas_sence_m.aspx?nuevo=si")
+    End Sub
+
+    Protected Sub btnVolver_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Response.Redirect("menu_administracion.aspx")
+    End Sub
+End Class

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<comprobanteAporte>
+  <titulo></titulo>
+  <subtitulo>COMPROBANTE DE APORTE</subtitulo>
+  <organismo>ORGANISMO TECNICO INTERMEDIARIO DE CAPACITACIÓN</organismo>
+  <suborganismo>RECONOCIDO POR EL SERVICIO NACIONAL DE CAPACITACIÓN Y EMPLEO, CON REGISTRO Nº 003, SEGÚN RESOLUCIÓN Nº 1380</suborganismo>
+  <numeroComprobanteTitulo>COMPROBANTE DE APORTE</numeroComprobanteTitulo>
+  <fechaTitulo>FECHA DOCUMENTO</fechaTitulo>
+  <empresaTitulo>RECIBI DE LA EMPRESA</empresaTitulo>
+  <rutTitulo>RUT</rutTitulo>
+  <direccionTitulo>DOMICILIADA EN</direccionTitulo>
+  <montoLetrasTitulo>LA SUMA DE</montoLetrasTitulo>
+  <documentoTitulo>CON DOCUMENTO Nº</documentoTitulo>
+  <bancoTitulo>BANCO</bancoTitulo>
+  <observaciones>COMO CANCELACIÓN DE APORTE AL ORGANISMO TÉCNICO INTERMEDIO DE CAPACITACIÓN , CORRESPONDIENTE A</observaciones>
+  <fechaAporteTitulo>FECHA APORTE</fechaAporteTitulo>
+  <montoNumerosTitulo>MONTO</montoNumerosTitulo>
+  <glosaTitulo>GLOSA</glosaTitulo>
+  <textoFinal>ESTE COMPROBANTE DE CONTROL Y CONSTANCIA DEL APORTE NO ES VALIDO PARA OPTAR A DESCUENTO.</textoFinal>
+  <subtextoFinal>PARA EFECTO DE DESCONTAR DE SUS IMPUESTOS DICHO APORTE, LE ENVIAREMOS UN CERTIFICADO VISADO POR SENCE.</subtextoFinal>
+  <pie>SANTIAGO - CHILE</pie>
+</comprobanteAporte>

@@ -1,0 +1,195 @@
+﻿Imports Clases
+Imports Modulos
+Imports Clases.Web
+Imports System
+Imports System.Data
+
+Partial Class modulo_administracion_comunicar_cursos_sence
+    Inherits System.Web.UI.Page
+    Dim objWeb As CWeb
+    Dim objSession As CSession
+    Dim objComunicar As CComunicar
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Try
+            
+            objWeb = New CWeb
+
+            objWeb.ChequeaSession(objSession)
+            body.Attributes.Clear()
+            ViewState("CodCurso") = Request("codCurso")
+
+
+            If Not Page.IsPostBack Then
+                Dim strOrigen As String
+                Dim blnEnComunicacion As Boolean
+                Dim blnEnLiquidacion As Boolean
+                Dim strCodigosCursos As String
+                lblPie.Text = Parametros.p_PIE
+                strOrigen = Request("hdfOrigen")
+                If ViewState("CodCurso") Is Nothing Then
+                    strCodigosCursos = "-1"
+                Else
+                    strCodigosCursos = ViewState("CodCurso")
+                End If
+
+                If Not Request("enComunicacion") Is Nothing Then
+                    blnEnComunicacion = Request("enComunicacion")
+                End If
+                If Not Request("enLiquidacion") Is Nothing Then
+                    blnEnLiquidacion = Request("enLiquidacion")
+                End If
+
+                If strOrigen Is Nothing Then
+                    If strOrigen = "ADMINISTRACION" Then
+                        Me.menu.Visible = False
+                        Me.btnVolver.Visible = True
+                    End If
+                End If
+                objComunicar = New CComunicar
+                objComunicar.RutUsuario = objSession.Rut
+                If Not strOrigen = "ADMINISTRACION" Then
+                    objComunicar.EnComunicacion = blnEnComunicacion
+                    objComunicar.EnLiquidacion = blnEnLiquidacion
+                    objComunicar.Codigos = strCodigosCursos
+                    If Not objComunicar.GenerarBase() Then
+                        LinkButton1.Enabled = False
+                        hplPaso2.Enabled = False
+                        hplPaso3.Enabled = False
+                        body.Attributes.Add("onload", "alert('Ha ocurrido un problema al generar la base, favor revisar los datos.');")
+                    End If
+                End If
+                objComunicar = Nothing
+                If ViewState("PaginasAtras") Is Nothing Then
+                    ViewState("PaginasAtras") = 1
+                End If
+            Else
+                ViewState("PaginasAtras") = ViewState("PaginasAtras") + 1
+                'hplBajarMdb.NavigateUrl = ""
+                'hplBajarMdb.NavigateUrl = Parametros.p_DIRVIRTUALMAIL & "/contenido/bd/acciones.mdb" 'Parametros.p_DIRFISICO & "contenido\bd\acciones.mdb"
+
+                'LinkButton1.ResolveClientUrl(Parametros.p_DIRFISICO & "contenido\bd\acciones.mdb")
+            End If
+            Me.btnVolver.OnClientClick = "javascript:window.history.go(-" & ViewState("PaginasAtras") & ");return false;"
+        Catch ex As Exception
+
+            EnviaError("comunicar_cursos_sence.aspx:Page_Load-->" & ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub hplPaso2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles hplPaso2.Click
+        Try
+            objComunicar = New CComunicar
+            If objComunicar.RespaldarBase() Then
+                body.Attributes.Add("onload", "alert('Se ha respaldado correctamente el archivo.');")
+            End If
+            objComunicar = Nothing
+        Catch ex As Exception
+            EnviaError("comunicar_cursos_sence.aspx:hplPaso2_Click-->" & ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub btnComunicar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnComunicar.Click
+        Try
+            Dim objComunicar As New CComunicar
+            objComunicar.inicializar()
+            objComunicar.RutUsuario = objSession.Rut
+            Dim fileName As String
+            Dim savePath As String = Server.MapPath("~/contenido/tmp/")
+            fileName = fulRespuesta.FileName
+            savePath += fileName
+            If fulRespuesta.HasFile Then
+                If fileName.Substring(fileName.Length - 3) = "txt" Then
+                    fileName = NombreArchivoTmp("txt")
+                    Me.fulRespuesta.SaveAs(savePath)
+                    objComunicar.RespuestaSence(savePath)
+                ElseIf fileName.Substring(fileName.Length - 3) = "bak" Then
+                    fileName = NombreArchivoTmp("bak")
+                    Me.fulRespuesta.SaveAs(savePath)
+                    objComunicar.RespuestaSence(savePath)
+                ElseIf fileName.Substring(fileName.Length - 3) = "BAK" Then
+                    fileName = NombreArchivoTmp("BAK")
+                    Me.fulRespuesta.SaveAs(savePath)
+                    objComunicar.RespuestaSence(savePath)
+                Else
+                    Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " & _
+                          "alert('¡Error con el formato del archivo tiene que ser un txt o bak!');" & _
+                          "</script>")
+                End If
+            End If
+            objweb = New cweb
+            objWeb.LlenaGrilla(Me.grdResultados, objComunicar.Datos)
+            If Not objComunicar.Mensajes Is Nothing Then
+                Dim numErrores As Integer
+                numErrores = objComunicar.Mensajes.Rows.Count
+                If numErrores > 0 Then
+                    Me.lblNumErrores.Text = numErrores
+                    objWeb.LlenaGrilla(Me.grdErrores, objComunicar.Mensajes)
+                    Me.tblErrores.Visible = True
+                    Me.grdErrores.Visible = True
+                Else
+                    Me.tblErrores.Visible = False
+                    Me.grdErrores.Visible = False
+                End If
+            Else
+                Me.tblErrores.Visible = False
+                Me.grdErrores.Visible = False
+            End If
+            objWeb = Nothing
+            Comunicacion.Visible = False
+        Catch ex As Exception
+            EnviaError("comunicar_cursos_sence.aspx:btnComunicar_Click-->" & ex.Message)
+        End Try
+    End Sub
+
+    'Protected Sub btnVolver_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+    '    Response.Redirect("menu_administracion.aspx")
+    'End Sub
+
+    Protected Sub LinkButton1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton1.Click
+        Response.AppendHeader("content-disposition", "attachment; filename=acciones.mdb")
+        Response.Clear()
+        Response.WriteFile(Parametros.p_DIRFISICO & "contenido\bd\acciones.mdb")
+        Response.End()
+    End Sub
+
+    'Protected Sub grdResultados_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles grdResultados.RowDataBound
+    '    If e.Row.RowType = DataControlRowType.Pager AndAlso Not grdResultados.DataSource Is Nothing Then
+    '        Dim hplFolio As HyperLink
+    '        hplFolio = CType(e.Row.FindControl("hplFolio"), HyperLink)
+    '        Dim hdfCodCurso As HiddenField
+    '        hdfCodCurso = CType(e.Row.FindControl("hdfCodCurso"), HiddenField)
+
+    '        hplFolio.NavigateUrl = "ficha_curso_contratado.aspx?CodCurso=" & hdfCodCurso.Value & "&rutUsuario=" & objSession.Rut
+
+    '        Dim hplEmpresa As HyperLink
+    '        hplEmpresa = CType(e.Row.FindControl("hplEmpresa"), HyperLink)
+
+    '        Dim hplCurso As HyperLink
+    '        hplCurso = CType(e.Row.FindControl("hplCurso"), HyperLink)
+
+    '        Dim hplOtec As HyperLink
+    '        hplOtec = CType(e.Row.FindControl("hplOtec"), HyperLink)
+    '    End If
+    'End Sub
+
+    Protected Sub grdResultados_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles grdResultados.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow AndAlso Not grdResultados.DataSource Is Nothing Then
+            Dim hplFolio As HyperLink
+            hplFolio = CType(e.Row.FindControl("hplFolio"), HyperLink)
+            Dim hdfCodCurso As HiddenField
+            hdfCodCurso = CType(e.Row.FindControl("hdfCodCurso"), HiddenField)
+
+            hplFolio.NavigateUrl = "ficha_curso_contratado.aspx?CodCurso=" & hdfCodCurso.Value & "&rutUsuario=" & objSession.Rut
+
+            Dim hplEmpresa As HyperLink
+            hplEmpresa = CType(e.Row.FindControl("hplEmpresa"), HyperLink)
+
+            Dim hplCurso As HyperLink
+            hplCurso = CType(e.Row.FindControl("hplCurso"), HyperLink)
+
+            Dim hplOtec As HyperLink
+            hplOtec = CType(e.Row.FindControl("hplOtec"), HyperLink)
+        End If
+    End Sub
+End Class

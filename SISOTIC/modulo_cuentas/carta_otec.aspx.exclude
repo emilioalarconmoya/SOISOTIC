@@ -1,0 +1,1193 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="carta_otec.aspx.vb" Inherits="modulo_cursos_carta_otec" %>
+
+<%@ Register Src="~/contenido/ascx/cabeceraUsuario.ascx" TagName="cabeceraUsuario" TagPrefix="uc3" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" > 
+<head id="Head1" runat="server">
+     <link href="../estilo.css" rel="Stylesheet" type="text/css" />
+
+<title>Carta Otec</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div id="contenedor">
+              <div id="bannner">
+        <img src="../include/imagenes/css/fondos/reporte01.jpg" alt="Otichile" title="Cabecera Otichile"/>
+        <uc3:cabeceraUsuario ID="datos_personales1" runat="server" />
+        </div> 
+     
+        <div id="menu">
+        <div id="header">
+            <ul>
+            <li>
+                        <asp:HyperLink ID="hplResumenGrafico" runat="server" NavigateUrl="resumen_grafico.aspx"><b>Resumen de gestión</b></asp:HyperLink>
+                    </li>
+                <li>
+                    <asp:HyperLink ID="hplResumen" runat="server" NavigateUrl="resumen.aspx"><b>Cartola resumen</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplAlumnos" runat="server" NavigateUrl="reporte_alumnos.aspx"><b>Alumnos</b></asp:HyperLink>
+                </li>
+                <li class="pestanaconsolaseleccionada">
+                    <asp:HyperLink ID="hplCursos" runat="server" NavigateUrl="reporte_cursos_consolidado.aspx"><b>Cursos</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplAportes" runat="server" NavigateUrl="reporte_aportes.aspx"><b>Aportes</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplTerceros" runat="server" NavigateUrl="reporte_terceros.aspx"><b>Terceros</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplViaticosyTraslado" runat="server" NavigateUrl="reporte_vyt.aspx"><b>V & T</b></asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="hplCuentas" runat="server" NavigateUrl="reporte_cuentas.aspx" Visible="true" ><b>Cuentas</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplCursoInterno" runat="server" NavigateUrl="~/modulo_cuentas/mantenedor_cursos_internos.aspx"><b>Curso interno</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplCargaDeCursos" runat="server" NavigateUrl="menu_cargas.aspx"><b>Cargas</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplIngresoCurso" runat="server" NavigateUrl="~/modulo_cuentas/mantenedor_cursos.aspx" Visible="false"><b>Ingreso curso</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplPorTramo" runat="server" NavigateUrl="reporte_por_tramo.aspx"><b>Por Tramo</b></asp:HyperLink>
+                </li>
+                <li >
+                    <asp:HyperLink ID="HyperLink2" runat="server" Target="_blank"  NavigateUrl="certificado_aportes.aspx"><b>Certif. aportes</b></asp:HyperLink>
+                </li>                
+                <li >
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="../menu.aspx"><b>Menú principal</b></asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="hplSalir" runat="server" NavigateUrl="../fin_sesion.aspx"><b>Salir</b></asp:HyperLink>
+                </li>
+            </ul>
+        </div>  
+    </div>
+	<div id="Carta">
+
+    	<h1>Orden de compra</h1>
+    	<div id="Membrete">
+        	<span>Srs.</span>
+            <asp:Label ID="lblNombreContacto" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="lblCargoContacto" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="lblRazonSocial" runat="server"></asp:Label>
+            <br  />
+            <span>
+            	Fax
+            </span>
+            <asp:Label ID="lblFax" runat="server"></asp:Label>
+            <br />
+            <span>
+            	Contacto
+            </span>
+            <asp:Label ID="lblContactoAd" runat="server"></asp:Label>
+        </div>
+    	<div id="DatosOC">
+
+        	<div id="Datos">
+            	<span>
+                	Orden de compra
+                </span>
+                <asp:Label ID="lblCorrelativo" runat="server"></asp:Label>
+                <br />
+            	<span>
+                	Estado curso
+                </span>
+                <asp:Label ID="lblEstadoCurso" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Tipo Actividad
+                </span>
+                <asp:Label ID="lblCodTipoAct" runat="server"></asp:Label>
+                <br />
+                <asp:Label ID="lblNomEjecutivo" runat="server"></asp:Label>
+                <br />
+                <asp:Label ID="lblFechaImp" runat="server"></asp:Label>            
+            </div>
+        </div>
+        <div id="Alumnos">
+        	<span>
+            	De mi consideración:
+            </span>
+            <p>
+            	A través de la presente, solicito a usted inscribir la siguiente nómina de alumnos en el curso que se detalla a continuación según lo ordenado por nuestro cliente:
+            </p>
+            <asp:GridView ID="grdListadoAlumnos" runat="server" AutoGenerateColumns="False" CssClass="Grid" Width="950px">
+                <Columns>
+                    <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:Label ID="lblContador" runat="server"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Rut">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblRut" runat="server" Text='<%# Bind("rut_alumno") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblNombre" runat="server" Text='<%# Bind("nombre_completo") %>' ></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Franquicia">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblFranquicia" runat="server" Text='<%# Bind("porc_franquicia") %>'></asp:Label>%
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo OTIC">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblCostoOtic" runat="server" Text='<%# Bind("costo_otic") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo empresa">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblCostoEmpresa" runat="server" Text='<%# Bind("gasto_empresa") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <p>
+            	A continuación se presentan los datos relacionados con el curso que deberán ser incluídos obligatoriamente en la glosa de la factura a emitir por su OTEC.
+            </p>
+            <p>
+            	Una vez finalizado el curso deberá emitir una factura correspondiente al monto especificado en la línea "Facturación OTIC <asp:Label ID="lblNomOtic" runat="server"></asp:Label>" de la siguiente tabla, del período respectivo, a nombre de <asp:Label ID="lblRazonSocOtic" runat="server"></asp:Label>, Rut <asp:Label ID="lblRutOtic" runat="server"></asp:Label>, <asp:Label ID="lblDireccOtic" runat="server"></asp:Label>, Santiago.
+            </p>
+            <p>
+            	Por otro lado, deberá emitir factura a nombre de <asp:Label ID="lblRazonSocialCli" runat="server"></asp:Label>, <asp:Label ID="lblRutCli" runat="server"></asp:Label>, <asp:Label ID="lblDireccCli" runat="server"></asp:Label>, por el monto especificado en la línea "Facturación empresa" de la siguiente tabla.
+            </p>
+        </div>
+        <div id="Curso">
+        	<h1>Curso</h1>
+            <div id="DatosCurso">
+            	<h2>Datos del curso</h2>
+                <span class="TitDato" >
+                	Nombre
+                </span>
+                <asp:Label ID="lblTNombre" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Correlativo
+                </span>
+                <asp:Label ID="lblTCorrelativo" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Fecha inicio
+                </span>
+                <asp:Label ID="lblTFechaInicio" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Fecha fin
+                </span>
+                <asp:Label ID="lblTFechaTermino" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Duración
+                </span>
+                <asp:Label ID="lblTDuracion" runat="server"></asp:Label>
+                <span>
+                	hrs. (
+                </span>
+                <asp:Label ID="lblTHoras" runat="server"></asp:Label>
+                <span>
+                	hrs. complementarias)
+                </span>
+                <br />
+                <span class="TitDato" >
+                	Código Sence
+                </span>
+                <asp:Label ID="lblTCodSence" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Lugar de ejecución
+                </span>
+                <asp:Label ID="lblCursoDirecc" runat="server"></asp:Label>
+                <asp:Label ID="lblNroDireccionCurso" runat="server"></asp:Label>
+                <span>
+                	-
+                </span>
+                <asp:Label ID="lblComuna" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Nº registro Sence
+                </span>
+                <asp:Label ID="lblNumRegistro" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Empresa
+                </span>
+                <asp:Label ID="lblTEmpresa" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Rut empresa
+                </span>
+                <asp:Label ID="lblTRutEmpresa" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Observación
+                </span>
+                <asp:Label ID="lblObservacion" runat="server"></asp:Label>
+                <br />
+            </div>
+            <div id="Valores">
+            	<h2>Valores asociados</h2>
+                <span class="TitDato" >
+                	Descuento
+                </span>
+                <asp:Label ID="lblTDescuento" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Participantes
+                </span>
+                <asp:Label ID="lblTParticipantes" runat="server"></asp:Label>
+                <br />
+                <span class="TitDato" >
+                	Valor final
+                </span>
+                <asp:Label ID="lblTValorFinal" runat="server"></asp:Label>
+                <br />
+            </div>
+        </div>
+        <div id="Facturacion">
+        	<h1>Facturación</h1>
+            <div id="Otic">
+            	<div id="OticDatos">
+                    <span>
+                        Rut
+                    </span>
+                    <asp:Label ID="lblTRutOtic" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Dirección
+                    </span>
+                    <asp:Label ID="lblTDireccionOtic" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Giro
+                    </span>
+                    <asp:Label ID="lblTGiroOtic" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Teléfono
+                    </span>
+                    <asp:Label ID="lblTFonoOtic" runat="server"></asp:Label>
+                    <span>
+                        Fax
+                    </span>
+                    <asp:Label ID="lblTFaxOtic" runat="server"></asp:Label>
+                    <br />
+                </div>
+            	<div id="OticValores">
+                    <asp:Label ID="lblTNombreOtic" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <span>
+                        Monto Otic
+                        <asp:Label ID="lblTOtic" runat="server"></asp:Label>
+                    </span>
+                    <asp:Label ID="lblTCostoOtic" runat="server"></asp:Label>
+                    <span id="CostoEstimado">
+                	<br />
+                    <br />
+                	*Costo Otic estimado año 
+                    <asp:Label ID="lblTAgno" runat="server"></asp:Label>
+                </span>
+                <span>
+                	<asp:Label ID="lblTCostoOticCompl" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                </span>
+                    <span id="CostoComplementario">
+                	* El Monto del costo complementario estimado debe ser facturado el año <asp:Label ID="lblAgno" runat="server"></asp:Label>
+                </span>
+                </div>
+            </div>
+            <div id="Empresa">
+            	<div id="EmpresaDatos">
+                    <span>
+                        Rut
+                    </span>
+                    <asp:Label ID="lblRutEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Dirección
+                    </span>
+                    <asp:Label ID="lblDireccionEmpresa" runat="server"></asp:Label>
+                    <asp:Label ID="lblNroDireccionEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Giro
+                    </span>
+                    <asp:Label ID="lblGiroEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Teléfono
+                    </span>
+                    <asp:Label ID="lblFonoEmpresa" runat="server"></asp:Label>
+                    <span>
+                        Fax
+                    </span>
+                    <asp:Label ID="lblFaxEmpresa" runat="server"></asp:Label>
+                    <br />
+                </div>
+            	<div id="EmpresaValores">
+                    <asp:Label ID="lblNombreEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <span>
+                        Monto Empresa
+                    </span>
+                    <asp:Label ID="lblTGastoEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <span>
+                        Valor total del curso
+                    </span>
+                    <asp:Label ID="lblTTotalValor" runat="server"></asp:Label>
+                </div>
+                    <br />
+                    <br />
+                
+                    <br />
+                
+            </div>
+        </div>
+        <div id="horario"  >
+        	<h1>Horario curso</h1>
+            <table id="Table1" runat="server" cellpadding="0" cellspacing="0" class="Grid" align="center"  >
+                <tr>
+                    <th>
+                        Lunes
+                    </th>
+                    <th>
+                        Martes
+                    </th>
+                    <th>
+                        Miércoles
+                    </th>
+                    <th>
+                        Jueves
+                     </th>
+                    <th>
+                        Viernes
+                     </th>
+                    <th>
+                        Sábado
+                    </th>
+                    <th>
+                        Domingo
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <asp:Label ID="lblLunes" runat="server" Text=" "></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblMartes" runat="server" Text=" "></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblMiercoles" runat="server" Text=" "></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblJueves" runat="server" Text=" "></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblViernes" runat="server" Text=" "></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblSabado" runat="server" Text=" "></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblDomingo" runat="server" Text=" "></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Requisitos">
+        	<h1>Requisitos y condiciones de cancelación</h1>
+            <asp:Literal ID="litRequisitos" runat="server"></asp:Literal>
+            <%--<p>
+            	1° El correspondiente pago de la actividad, se realizará una vez que esta se encuentre finalizada, y los participantes deberán tener registrada una asistencia equivalente al 75% de su duración total. En caso contrario, el importe correspondiente será de cargo de la empresa a la que pertenecen. En caso que el o los cursos sean e-learning o a distancia, se requiere la respectiva Declaración Jurada simple de “Aprobado” o “Reprobado” por los participantes
+            </p>
+            <p>
+            	2° Se considerará actividad no ejecutada, si dentro de los 20 días hábiles siguientes a la fecha de termino del curso, no se han recepcionado la(s) factura(s) y el respectivo Informe de Asistencia. 
+            </p>
+            <p>
+            	3° Será requisito indispensable para la cancelación de la factura, adjuntar a esta el Informe de Asistencia de los alumnos inscritos en esta carta. IMPORTANTE: En caso de participantes que no cumplan con la asistencia mínima exigida por SENCE (Ley 19.518), se deberá rebajar de la facturación del monto franquiciable (OTIC), los valores correspondientes por este concepto. La diferencia producida no afecta a franquicia tributaria, deberá facturarse a la Empresa como gasto. 
+            </p>
+            <p>
+            	4° Las Facturas Costo Otic (Valor Sence) deben enviarse a <asp:Label ID="lblDireccionOtic" runat="server"></asp:Label>, Santiago (Dirección del Otic <asp:Label ID="lblOtic2" runat="server"></asp:Label>), adjuntando copia de esta Orden de Compra. Las facturas de Costo empresa deben enviarse directamente a la dirección de la Empresa:  <asp:Label ID="lblDireccClie" runat="server"></asp:Label>,<asp:Label ID="lblComunaClie" runat="server"></asp:Label>. Con fotocopia al Otic. 
+            </p>
+            <p>
+            	5° Para consultas sobre el pago de facturas por favor comunicarse al fono 4216559 - Señor Luis Nuñez, <a href="mailto:tecnologia@soleduc.cl" >tecnologia@soleduc.cl</a>
+            </p>
+            <p>
+            	6º Se debe traer cuarta copia de la factura al momento del pago y sin estos documentos no se recibiran facturas. 
+            </p>
+            <p>
+            	Quedando a su entera disposición para aclarar cualquier duda, 
+            </p>--%>
+            <%--<asp:Label ID="lblDireccionOtic" runat="server"></asp:Label>
+            <asp:Label ID="lblOtic2" runat="server"></asp:Label>
+            <asp:Label ID="lblDireccClie" runat="server"></asp:Label>
+            <asp:Label ID="lblComunaClie" runat="server"></asp:Label>--%>
+            <asp:HiddenField ID="lblDireccionOtic" runat="server" />
+            <asp:HiddenField ID="lblOtic2" runat="server" />
+            <asp:HiddenField ID="lblDireccClie" runat="server" />
+            <asp:HiddenField ID="lblComunaClie" runat="server" />
+            
+            
+            <p id="RequisitosPie" >
+            	Saluda atentamente a usted.
+                <br  />
+                <asp:Label ID="lblOtic" runat="server" Font-Bold="True"></asp:Label>
+            </p>
+        </div>
+        <div id="Botonera">
+        	<asp:HyperLink ID="hplGenerar" runat="server" Visible="False">[hplGenerar]</asp:HyperLink>
+            <br />
+            <asp:CheckBox ID="chkGenerar" runat="server" Text="Generar HTML" Visible="False" />
+            <br />
+            <asp:Button ID="btnVolver" runat="server" Text="Volver" />
+        	<asp:Button ID="btnGenerar" runat="server" Text="Generar" Visible="False" />
+            <asp:Button ID="btnGenerarPdf" runat="server" Text="Generar PDF" />
+            <asp:Button ID="btnGenerarExcel" runat="server" Text="Generar Excel" /></div>
+        <div id="pie">
+            <div class="textoPie" >
+                <asp:Label ID="lblPie"  runat="server"></asp:Label>
+            </div>
+        </div>
+    </div>
+    </div>
+    </form>
+</body>
+</html>
+
+
+     <%--<script type="text/javascript" >
+        function Imprimir()
+        {
+           window.print();
+            return false;
+        }
+      </script>
+      <style media="print" type="text/css">
+        #botones
+        {
+        display: none;
+        }
+      </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="contenedor">
+    <div id="bannner">
+        <asp:Literal ID="litCabecera" runat="server"></asp:Literal>
+    </div>
+    <div id="DivCarta">
+    <table id="TablaCarta">
+            <tr>
+                <th colspan="3" valign="top" class="TituloGrupo">
+                             <asp:Label ID="Label1" runat="server" Text="Orden de compra"></asp:Label>
+                </th>
+            </tr>
+            <tr>
+                <td id="tdTabla1">
+                    <table class="TablaDatosOTEC" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="3">
+                                Sres.
+                                <asp:Label ID="lblNombreContacto" runat="server"></asp:Label><br />
+                                <asp:Label ID="lblCargoContacto" runat="server"></asp:Label><br />
+                                <asp:Label ID="lblRazonSocial" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%" class="DatosVarios">
+                                Fax</td>
+                            <td class="DosPuntos" style="width: 2%">
+                                :</td>
+                            <td>
+                                <asp:Label ID="lblFax" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%" class="DatosVarios">
+                                Contacto OTEC</td>
+                            <td class="DosPuntos" style="width: 2%">
+                                :</td>
+                            <td>
+                                <asp:Label ID="lblContactoAd" runat="server"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="tdTabla2">
+                    <table class="TablaDatosOTEC" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="AlineacionDerecha" colspan="3">
+                                Orden de compra</td>
+                            <td class="DosPuntos" style="width: 2%">
+                                :</td>
+                            <td class="AlineacionDerecha" style="width: 20%">
+                                <asp:Label ID="lblCorrelativo" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td class="AlineacionDerecha" colspan="3">
+                                Estado Curso</td>
+                            <td class="DosPuntos" style="width: 2%">
+                                :</td>
+                            <td class="AlineacionDerecha" style="width: 20%">
+                                <asp:Label ID="lblEstadoCurso" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td class="AlineacionDerecha" colspan="3">
+                                Tipo Actividad</td>
+                            <td class="DosPuntos" style="width: 2%">
+                                :</td>
+                            <td class="AlineacionDerecha" style="width: 20%">
+                                <asp:Label ID="lblCodTipoAct" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td class="AlineacionDerecha" colspan="5">
+                                <asp:Label ID="lblNomEjecutivo" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td class="AlineacionDerecha" colspan="5">
+                                <asp:Label ID="lblFechaImp" runat="server"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="tdTabla3" rowspan="1">
+                    <asp:Literal ID="litLogo" runat="server"></asp:Literal>
+               
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    De mi consideración:
+                    <br />
+                    <br />
+                    A través de la presente, solicito a usted inscribir la siguiente nómina de alumnos
+                    en el curso que se detalla a continuación según lo ordenado por nuestro cliente:</td>
+            </tr>
+        </table>
+        <table>
+        <tr>
+         <th width="970px" valign="top" class="DestacadoRojo">
+            <asp:Label ID="Label19" runat="server" Text="Listado de alumnos"></asp:Label>
+         </th>
+        </tr>
+        </table>
+            <asp:GridView ID="grdListadoAlumnos" runat="server" AutoGenerateColumns="False" CssClass="Grid" Width="970px">
+                <Columns>
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <table class="TablaInterior">
+                            <tr>
+                                <td valign="top" class="AlineacionIzquierda">
+                                    <asp:Label ID="lblContador" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                    <ItemStyle VerticalAlign="Top" Width="10px" />
+                </asp:TemplateField>
+                    <asp:TemplateField HeaderText="RUT">
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" class="TablaInterior">
+                                <tr>
+                                    <td style="width: 100px">
+                            <asp:Label ID="lblRut" runat="server" Text='<%# Bind("rut_alumno") %>'></asp:Label></td>
+                                </tr>
+                            </table>
+                            &nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre">
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" class="TablaInterior" width="300">
+                                <tr>
+                                    <td style="width: 100px">
+                            <asp:Label ID="lblNombre" runat="server" Text='<%# Bind("nombre_completo") %>' Width="300px"></asp:Label></td>
+                                </tr>
+                            </table>
+                            &nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Franquicia">
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" class="TablaInterior">
+                                <tr>
+                                    <td style="width: 100px">
+                            <asp:Label ID="lblFranquicia" runat="server" Text='<%# Bind("porc_franquicia") %>'></asp:Label>%</td>
+                                </tr>
+                            </table>
+                            &nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo OTIC">
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" class="TablaInterior">
+                                <tr>
+                                    <td style="width: 100px">
+                            <asp:Label ID="lblCostoOtic" runat="server" Text='<%# Bind("costo_otic") %>'></asp:Label></td>
+                                </tr>
+                            </table>
+                            &nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo empresa">
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" class="TablaInterior">
+                                <tr>
+                                    <td style="width: 100px">
+                            <asp:Label ID="lblCostoEmpresa" runat="server" Text='<%# Bind("gasto_empresa") %>'></asp:Label></td>
+                                </tr>
+                            </table>
+                            &nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <table id="TablaTexto">
+                <tr>
+                    <td>
+                        A continuación se presentan los datos relacionados con el curso que deberán ser
+                        incluídos obligatoriamente en la glosa de la factura a emitir por su OTEC. Una vez
+                        finalizado el curso deberá emitir una factura correspondiente al monto especificado
+                        en la línea "Facturación OTIC
+                        <asp:Label ID="lblNomOtic" runat="server"></asp:Label>" de la siguiente tabla, del
+                        período respectivo, a nombre de
+                        <asp:Label ID="lblRazonSocOtic" runat="server"></asp:Label>, R.U.T. N°
+                        <asp:Label ID="lblRutOtic" runat="server"></asp:Label>,
+                        <asp:Label ID="lblDireccOtic" runat="server"></asp:Label>, Santiago.<br />
+                        <br />
+                        Por otro lado, deberá emitir factura a nombre de
+                        <asp:Label ID="lblRazonSocialCli" runat="server"></asp:Label>,
+                        <asp:Label ID="lblRutCli" runat="server"></asp:Label>,
+                        <asp:Label ID="lblDireccCli" runat="server"></asp:Label>, por el monto especificado
+                        en la línea "Facturación empresa" de la siguiente tabla.</td>
+                </tr>
+            </table>
+            <table id="TablaCurso">
+                <tr>
+                <th colspan="2" valign="top" class="DestacadoRojo">
+                             <asp:Label ID="Label2" runat="server" Text="Curso - facturación"></asp:Label>
+                </th>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        <table cellpadding="0" cellspacing="0" class="TablaDatosOTEC">
+                             <tr>
+                             <th colspan="3" valign="top" style="width: 25%; height: 19px;">
+                             <asp:Label ID="Label3" runat="server" Text="Datos del curso"></asp:Label>
+                            </th>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px;">
+                                    <asp:Label ID="Label4" runat="server" Text="Nombre"></asp:Label></td>
+                                <td style="width: 2%; height: 19px;" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblTNombre" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px;">
+                                    <asp:Label ID="Label5" runat="server" Text="Correlativo"></asp:Label></td>
+                                <td style="width: 2%; height: 19px" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblTCorrelativo" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px;">
+                                    <asp:Label ID="Label6" runat="server" Text="Fecha inicio"></asp:Label></td>
+                                <td style="width: 2%; height: 19px;" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblTFechaInicio" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <asp:Label ID="Label7" runat="server" Text="Fecha término"></asp:Label></td>
+                                <td style="width: 2%" class="DosPuntos">
+                                    :</td>
+                                <td>
+                                    <asp:Label ID="lblTFechaTermino" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%;">
+                                    <asp:Label ID="Label8" runat="server" Text="Duración"></asp:Label></td>
+                                <td style="width: 2%; height: 12px" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 12px">
+                                    <asp:Label ID="lblTDuracion" runat="server"></asp:Label>
+                                    hrs. (<asp:Label ID="lblTHoras" runat="server"></asp:Label>
+                                    hrs. complementarias)</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px;">
+                                    <asp:Label ID="Label9" runat="server" Text="Código SENCE"></asp:Label></td>
+                                <td style="width: 2%; height: 19px" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblTCodSence" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px">
+            <asp:Label ID="Label18" runat="server" Text="Lugar de ejecución" Font-Bold="False"></asp:Label></td>
+                                <td class="DosPuntos" style="width: 2%; height: 19px">
+                                    :</td>
+                                <td style="height: 19px">
+                <asp:Label ID="lblCursoDirecc" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblNroDireccionCurso" runat="server"></asp:Label>
+                                    -
+                                    <asp:Label ID="lblComuna" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px;">
+                                    <asp:Label ID="Label24" runat="server" Text="Nº Registro SENCE"></asp:Label></td>
+                                <td class="DosPuntos" style="width: 2%; height: 19px">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblNumRegistro" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <asp:Label ID="Label10" runat="server" Text="Empresa"></asp:Label></td>
+                                <td style="width: 2%" class="DosPuntos">
+                                    :</td>
+                                <td>
+                                    <asp:Label ID="lblTEmpresa" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px;">
+                                    <asp:Label ID="Label11" runat="server" Text="RUT Empresa"></asp:Label></td>
+                                <td style="width: 2%; height: 19px;" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblTRutEmpresa" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%; height: 19px">
+                                    <asp:Label ID="Label43" runat="server" Text="Observación"></asp:Label></td>
+                                <td class="DosPuntos" style="width: 2%; height: 19px">
+                                    :</td>
+                                <td style="height: 19px">
+                                    <asp:Label ID="lblObservacion" runat="server"></asp:Label></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" class="TablaDatosOTEC">
+                         <tr>
+                             <th colspan="3" valign="top">
+                             <asp:Label ID="Label12" runat="server" Text="Valores asociados"></asp:Label>
+                            </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label14" runat="server" Text="Descuento"></asp:Label></td>
+                                <td style="width: 2%" class="DosPuntos">
+                                    :</td>
+                                <td class="AlineacionDerecha">
+                                    <asp:Label ID="lblTDescuento" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td style="height: 12px">
+                                    <asp:Label ID="Label15" runat="server" Text="Participantes"></asp:Label></td>
+                                <td style="width: 2%; height: 12px;" class="DosPuntos">
+                                    :</td>
+                                <td style="height: 12px" class="AlineacionDerecha">
+                                    <asp:Label ID="lblTParticipantes" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label16" runat="server" Text="Valor final"></asp:Label></td>
+                                <td class="DosPuntos" style="width: 2%">
+                                    :</td>
+                                <td class="AlineacionDerecha">
+                                    <asp:Label ID="lblTValorFinal" runat="server"></asp:Label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 135px">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="AlineacionIzquierda" colspan="2" rowspan="1" style="height: 12px">
+                             </th>
+                </tr>
+                <tr>
+                    <td class="TablaDatosOTEC" colspan="2" rowspan="1" style="height: 12px">
+                        <table style="width:100%">
+                        <tr>
+                                <th align="center" colspan="11">
+                             <asp:Label ID="Label13" runat="server" Text="Facturación"></asp:Label></th>
+                            </tr>
+                        </table>
+                        
+                        
+                        <table cellpadding="0" cellspacing="0" id="TablaFacturacion">
+                            <tr>
+                                <td style="width: 200px;" colspan="3">
+                                    <asp:Label ID="Label25" runat="server" Text="Rut"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td colspan="4" style="width: 442px;">
+                                    <asp:Label ID="Label33" runat="server" Text="70.533.700-4"></asp:Label></td>
+                                <td colspan="1" style="width: 2px">
+                                    </td>
+                                <td style="width: 336px;">
+                                    <asp:Label ID="Label34" runat="server" Text="CAPACITACIÓN"></asp:Label></td>
+                                <td style="width: 2px;">
+                                </td>
+                                <td style="width: 120px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                    <asp:Label ID="Label26" runat="server" Text="Direccíon"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td colspan="4" style="width: 442px">
+                                    <asp:Label ID="Label35" runat="server" Text="AV. ANDRES BELLO 2777 PISO 4 – LAS CONDES"></asp:Label></td>
+                                <td colspan="1" style="width: 2px">
+                                </td>
+                                <td style="width: 336px;">
+                                </td>
+                                <td style="width: 2px;">
+                                </td>
+                                <td style="width: 120px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                    <asp:Label ID="Label27" runat="server" Text="Giro"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td colspan="4" style="width: 442px">
+                                    <asp:Label ID="Label36" runat="server" Text="SERVICIOS"></asp:Label></td>
+                                <td colspan="1" style="width: 2px">
+                                </td>
+                                <td style="width: 336px;">
+                                    <asp:Label ID="Label38" runat="server" Text="MONTO OTIC"></asp:Label>
+                                    <asp:Label ID="lblTOtic" runat="server" Visible="False"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td style="width: 120px;">
+                                    <asp:Label ID="lblTCostoOtic" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px;">
+                                    <asp:Label ID="Label28" runat="server" Text="Fono"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td style="width: 110px;">
+                                    <asp:Label ID="Label37" runat="server" Text="4216550"></asp:Label></td>
+                                <td style="width: 50px;">
+                                    <asp:Label ID="Label39" runat="server" Text="Fax"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td style="width: 260px;">
+                                    <asp:Label ID="Label40" runat="server" Text="3742592"></asp:Label></td>
+                                <td style="width: 2px">
+                                </td>
+                                <td style="width: 336px;">
+                                </td>
+                                <td style="width: 2px;">
+                                </td>
+                                <td style="width: 120px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" style="height: 20px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 200px;" colspan="3">
+                                    <asp:Label ID="Label29" runat="server" Text="Rut"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td colspan="4" style="width: 442px;">
+                                    <asp:Label ID="lblRutEmpresa" runat="server"></asp:Label></td>
+                                <td colspan="1" style="width: 2px">
+                                    </td>
+                                <td style="width: 336px;">
+                                    <asp:Label ID="lblNombreEmpresa" runat="server"></asp:Label></td>
+                                <td style="width: 2px;">
+                                </td>
+                                <td style="width: 120px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                    <asp:Label ID="Label30" runat="server" Text="Direccíon"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td colspan="4" style="width: 442px">
+                                    <asp:Label ID="lblDireccionEmpresa" runat="server"></asp:Label>
+                                    <asp:Label ID="lblNroDireccionEmpresa" runat="server"></asp:Label></td>
+                                <td colspan="1" style="width: 2px">
+                                </td>
+                                <td style="width: 336px;">
+                                    </td>
+                                <td style="width: 2px;">
+                                </td>
+                                <td style="width: 120px;">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                    <asp:Label ID="Label31" runat="server" Text="Giro"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td colspan="4" style="width: 442px;">
+                                    <asp:Label ID="lblGiroEmpresa" runat="server"></asp:Label></td>
+                                <td colspan="1" style="width: 2px">
+                                </td>
+                                <td style="width: 336px;">
+                                    <asp:Label ID="Label41" runat="server" Text="MONTO EMPRESA"></asp:Label></td>
+                                <td style="width: 2px;">
+                                    :</td>
+                                <td style="width: 120px;">
+                                    <asp:Label ID="lblTGastoEmpresa" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                    <asp:Label ID="Label32" runat="server" Text="Fono"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td style="width: 110px;">
+                                    <asp:Label ID="lblFonoEmpresa" runat="server"></asp:Label></td>
+                                <td style="width: 50px;">
+                                    <asp:Label ID="Label17" runat="server" Text="Fax"></asp:Label></td>
+                                <td style="width: 2px;" class="DosPuntos">
+                                    :</td>
+                                <td style="width: 260px;">
+                                    <asp:Label ID="lblFaxEmpresa" runat="server"></asp:Label></td>
+                                <td style="width: 2px">
+                                </td>
+                                <td style="width: 336px;">
+                                </td>
+                                <td style="width: 2px;">
+                                </td>
+                                <td style="width: 120px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                </td>
+                                <td class="DosPuntos" style="width: 2px">
+                                </td>
+                                <td style="width: 110px">
+                                </td>
+                                <td style="width: 50px">
+                                </td>
+                                <td class="DosPuntos" style="width: 2px">
+                                </td>
+                                <td style="width: 260px">
+                                </td>
+                                <td style="width: 2px">
+                                </td>
+                                <td style="width: 336px">
+                                     <asp:Label ID="Label22" runat="server" Text="Total valor del curso"></asp:Label></td>
+                                <td style="width: 2px">
+                                    :</td>
+                                <td style="width: 120px">
+                                     <asp:Label ID="lblTTotalValor" runat="server"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                </td>
+                                <td class="DosPuntos" style="width: 2px">
+                                </td>
+                                <td style="width: 110px">
+                                </td>
+                                <td style="width: 50px">
+                                </td>
+                                <td class="DosPuntos" style="width: 2px">
+                                </td>
+                                <td style="width: 260px">
+                                </td>
+                                <td style="width: 2px">
+                                </td>
+                                <td style="width: 336px">
+                                </td>
+                                <td style="width: 2px">
+                                </td>
+                                <td style="width: 120px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 200px">
+                                </td>
+                                <td class="DosPuntos" style="width: 2px">
+                                </td>
+                                <td style="width: 110px">
+                                </td>
+                                <td style="width: 50px">
+                                </td>
+                                <td class="DosPuntos" style="width: 2px">
+                                </td>
+                                <td style="width: 260px">
+                                </td>
+                                <td style="width: 2px">
+                                </td>
+                                <td style="width: 336px">
+                                     <asp:Label ID="Label23" runat="server" Text="* Costo OTIC estimado año "></asp:Label><asp:Label ID="lblTAgno" runat="server"></asp:Label><asp:Label ID="Label21" runat="server"></asp:Label></td>
+                                <td style="width: 2px">
+                                    :</td>
+                                <td style="width: 120px">
+                                     <asp:Label ID="lblTCostoOticCompl" runat="server"></asp:Label></td>
+                            </tr>
+                        </table>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="AlineacionCentro" colspan="2" rowspan="1">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        &nbsp; * El Monto del costo complementario estimado debe ser facturado el año
+        <asp:Label ID="lblAgno" runat="server"></asp:Label><br />
+         <table>
+        <tr>
+         <th width="970px" valign="top" class="DestacadoRojo" style="height: 29px">
+            <asp:Label ID="Label20" runat="server" Text="Horario curso"></asp:Label>
+         </th>
+        </tr>
+        </table>
+        <table id="TablaHorario" runat="server" cellpadding="0" cellspacing="0">
+        <tr>
+        <th>
+            Lunes</th>
+        <th>
+            Martes</th>
+        <th>
+            Miércoles</th>
+        <th>
+            Jueves</th>
+        <th>
+            Viernes</th>
+        <th>
+            Sábado</th>
+        <th>
+            Domingo</th>
+        </tr>
+            <tr>
+                <td valign="top">
+                    <asp:Label ID="lblLunes" runat="server"></asp:Label><br />
+                    <br />
+                    &nbsp;</td>
+                <td valign="top">
+                    <asp:Label ID="lblMartes" runat="server"></asp:Label><br />
+                    </td>
+                <td valign="top">
+                    <asp:Label ID="lblMiercoles" runat="server"></asp:Label><br />
+                    </td>
+                <td valign="top">
+                    <asp:Label ID="lblJueves" runat="server"></asp:Label><br />
+                    </td>
+                <td valign="top">
+                    <asp:Label ID="lblViernes" runat="server"></asp:Label><br />
+                    </td>
+                <td valign="top">
+                    <asp:Label ID="lblSabado" runat="server"></asp:Label><br />
+                    </td>
+                <td valign="top">
+                    <asp:Label ID="lblDomingo" runat="server"></asp:Label><br />
+                    </td>
+            </tr>
+        </table>
+        <table id="TablaCartaFooter">
+            <tr>
+                <td>
+                    &nbsp;<br />
+                    <b>REQUISITOS Y CONDICIONES DE CANCELACIÓN:</b>
+                    <br />
+                    <br />
+                    1° El correspondiente pago de la actividad, se realizará una vez que esta se encuentre
+                    finalizada, y los participantes deberán tener registrada una asistencia equivalente
+                    al 75% de su duración total. En caso contrario, el importe correspondiente será
+                    de cargo de la empresa a la que pertenecen. En caso que el o los cursos sean e-learning o a distancia, 
+                    se requiere la respectiva Declaración Jurada simple de “Aprobado” o “Reprobado” por los 
+                    participantes.&nbsp;<br />
+                    <br />
+                    2° <b>Se considerará actividad no ejecutada, si dentro de los 20 días hábiles siguientes
+                    a la fecha de termino del curso, no se han recepcionado la(s) factura(s) y el respectivo
+                    Informe de Asistencia.</b>
+                    <br />
+                    <br />
+                    3° Será requisito indispensable para la cancelación de la factura, adjuntar a esta
+                    el <b>Informe de Asistencia</b> de los alumnos inscritos en esta carta. <b>IMPORTANTE:</b> En
+                    caso de participantes que no cumplan con la asistencia mínima exigida por SENCE
+                    (Ley 19.518), se deberá rebajar de la facturación del monto franquiciable (OTIC),
+                    los valores correspondientes por este concepto. La diferencia producida no afecta
+                    a franquicia tributaria, deberá facturarse a la Empresa como gasto."<br />
+                    <br />
+                    4° Las Facturas <b>Costo OTIC</b> (Valor Sence) deben enviarse a
+                    <asp:Label ID="lblDireccionOtic" runat="server"></asp:Label>, <b>Santiago (Dirección del
+                    OTIC 
+                        <asp:Label ID="lblOtic2" runat="server"></asp:Label>)</b>, adjuntando copia de esta Orden de Compra. Las facturas de <b>Costo
+                    Empresa</b> deben enviarse directamente a la dirección de la Empresa:
+                    <asp:Label ID="lblDireccClie" runat="server"></asp:Label>,<asp:Label ID="lblComunaClie"
+                        runat="server"></asp:Label>. Con fotocopia al OTIC.<br />
+                    <br />
+                    5° Para consultas sobre el pago de facturas por favor comunicarse al fono<span style="font-size: 11pt;
+                        font-family: 'Calibri','sans-serif'; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin;
+                        mso-ansi-language: ES; mso-fareast-language: ES; mso-bidi-language: AR-SA"><b>: 421
+                            65 59&nbsp; - &nbsp;Señor Luis Nuñez, <a href="mailto:tecnologia@soleduc.cl">tecnologia@soleduc.cl</a></b></span><br />
+                    <br />
+                    6º <span style="font-size: 11pt; font-family: 'Calibri','sans-serif'; mso-fareast-font-family: Calibri;
+                        mso-fareast-theme-font: minor-latin; mso-ansi-language: ES; mso-fareast-language: ES;
+                        mso-bidi-language: AR-SA"><strong>SE DEBE TRAER CUARTA COPIA DE LA FACTURA AL MOMENTO
+                            DEL PAGO &nbsp;Y <span style="font-size: 11pt; font-family: 'Calibri','sans-serif';
+                                mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: ES;
+                                mso-fareast-language: ES; mso-bidi-language: AR-SA">&nbsp;SIN ESTOS DOCUMENTOS NO
+                                SE RECIBIRÁN FACTURAS</span></strong></span>&nbsp;<br />
+                    <br />
+                    Quedando a su entera disposición para aclarar cualquier duda,<br />
+                    <br />
+                    Saluda atentamente a usted.<br />
+                    <br />
+                   <b>OTIC</b>
+                    <asp:Label ID="lblOtic" runat="server" Font-Bold="True"></asp:Label>
+                        &nbsp;
+                </td>
+            </tr>
+        </table>
+        <div id="botones">
+            <asp:HyperLink ID="hplGenerar" runat="server" Visible="False">[hplGenerar]</asp:HyperLink><br />
+            <asp:CheckBox ID="chkGenerar" runat="server" Text="Generar HTML" /><br />
+            <asp:Button ID="btnVolver" runat="server" Text="Volver" />
+        <asp:Button ID="btnGenerar" runat="server" Text="Generar" />&nbsp;<asp:Button ID="btnGenerarPdf"
+            runat="server" Text="Generar PDF" /></div>
+   </div>
+    <div id="pie">
+        <div class="textoPie" >
+            <asp:Label ID="lblPie"  runat="server"></asp:Label>
+        </div>
+        
+    </div>
+    </div>
+    </form>
+</body>
+</html>
+--%>

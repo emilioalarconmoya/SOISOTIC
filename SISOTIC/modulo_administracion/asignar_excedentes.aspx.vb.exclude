@@ -1,0 +1,70 @@
+﻿Imports Clases
+Imports Modulos
+Imports Clases.Web
+Imports System
+Imports System.Data
+Partial Class modulo_administracion_asignar_excedentes
+    Inherits System.Web.UI.Page
+    Dim objWeb As New CWeb
+    Dim objSession As CSession
+    Dim objLookups As New Clookups
+    Dim objCSql As New CSql
+    Dim objReporteExc As CReporteExcedentes
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Try
+            objWeb = New CWeb
+            objWeb.ChequeaSession(objSession)
+            body.Attributes.Clear()
+            If Not Page.IsPostBack Then
+                lblPie.Text = Parametros.p_PIE
+                ViewState("rutCliente") = Request("rutCliente")
+                ViewState("nomEmpresa") = Request("nomEmpresa")
+                ViewState("ejecutivo") = Request("ejecutivo")
+                ViewState("sucursal") = Request("sucursal")
+                ViewState("agno") = Request("agno")
+
+                'objWeb.LlenaDDL(Me.ddlEjecutivo, objLookups.EjecutivosTodos, "rut", "nombres")
+                'objWeb.LlenaDDL(Me.ddlSucursal, objLookups.sucursales, "cod_sucursal", "nombre")
+                'objWeb.LlenaDDL(Me.ddlAgno, objLookups.Agnos2, "Agno_v", "Agno_t")
+                'objWeb.AgregaValorDDL(Me.ddlEjecutivo, "", -1)
+                'objWeb.AgregaValorDDL(Me.ddlSucursal, "", -1)
+                'Me.ddlEjecutivo.SelectedValue = -1
+                'Me.ddlSucursal.SelectedValue = -1
+                'Me.ddlAgno.SelectedValue = Now.Year()
+
+
+            End If
+
+            Consultar()
+
+
+
+        Catch ex As Exception
+            EnviaError("modulo_administracion_asignar_excedentes.aspx.vb:Page_Load-->" & ex.Message)
+        End Try
+    End Sub
+    Public Sub Consultar()
+        Try
+            objReporteExc = New CReporteExcedentes
+            Dim rutCliente As Long
+            Dim ejecutivo As String
+            Dim sucursal As String
+            Dim nombreEmpresa As String
+            Dim agno As Integer
+
+            rutCliente = Request("rutCliente")
+            ejecutivo = Request("ejecutivo")
+            sucursal = Request("sucursal")
+            nombreEmpresa = Request("nomEmpresa")
+            agno = Request("agno")
+
+            
+        Catch ex As Exception
+            EnviaError("modulo_administracion_asignar_excedentes.aspx.vb:Page_Load-->" & ex.Message)
+           
+        End Try
+
+        Response.Redirect("asignacion_excedentes.aspx?rutCliente=" & Request("rutCliente") & "&ejecutivo=" & Request("ejecutivo") & "&sucursal=" & Request("sucursal") & "&nomEmpresa=" & Request("nomEmpresa") & "&agno=" & Request("agno"))
+
+    End Sub
+End Class

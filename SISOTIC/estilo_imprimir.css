@@ -1,0 +1,4078 @@
+﻿imput, .textoPie, #btnImprimir
+{
+	visibility:hidden !important; 
+	display:none !important;
+}
+body {
+	font: normal 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif !important;
+	color: #4f6b72;
+	background-color: #eaebeb;/*#cdddd7; /*#4b6bba; #b5d3ed;*/
+	background-image:url(include/imagenes/css/fondos/fondo_body.png);
+	background-position: top;
+	background-repeat:repeat-x;
+	margin-top: 0px;
+	text-transform:uppercase;
+	
+}
+.bodylogin{
+	background-color: #000 !important;
+    background-image:none;
+}
+#intro{
+	
+	height:525px; width:946px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}	
+#flash{
+	
+	height:525px; width:946px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:0px;
+	
+}	
+#formlogin{
+	position:absolute;
+	left:0px;
+	top:485px;
+	width:916px;
+	z-index:9px !important;
+	padding-top:0px;
+	text-align:right;
+	padding-right:30;
+}		
+.lblLogin{
+	font-family:Verdana;
+	font-size:8pt;
+	color:#fff;
+	background-color:Transparent;
+	font-weight:bold;
+}	
+.txtLogin{
+	font-family:Verdana;
+	font-size:8pt;
+	color:#000;
+	font-weight:bold;
+}	
+/*.btnLogin{
+	font-family:Verdana;
+	font-size:8pt;
+	color:#000;
+	font-weight:bold;
+}	*/
+. loginError
+{
+	font-family:Verdana;
+	font-size:8pt;
+	color:#fff;	
+}
+select, option, input, textarea, spam, label
+{
+	font: normal 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif !important;
+	text-transform:uppercase;
+}
+th,h1, .TituloVerde
+{
+	/*font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;*/
+	color: #FFFFFF;
+	border-right: 1px solid #C1DAD7;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background-color: #76eeff; /*#15c3dc; /*#a9ed7c; /*#acc3ec;*/
+	background-image:url(include/imagenes/css/fondos/reporte04.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+table
+{
+	background: #ffffff;	
+	border-bottom: 1px solid #C1DAD7 !important;
+	 
+}
+td {
+	/*border-right: 1px solid #C1DAD7 !important;
+	border-bottom: 1px solid #C1DAD7 !important;*/
+	padding: 6px 6px 6px 12px;
+	background: #ffffff;
+}
+
+
+
+input {
+	/*font: normal 10px  "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;*/
+	background-color: #FFFFFF;
+}
+label {
+	/*font: normal 10px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;*/
+	background-color: #FFFFFF;
+}
+select {
+	/*font: normal 10px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;*/
+	background-color: #FFFFFF;
+}
+textarea {
+	/*font: normal 10px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;*/
+	background-color: #FFFFFF;
+}
+checkbox {
+	/*font: normal 10px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;*/
+	background-color: #FFFFFF;
+}
+textbox {
+	/*font: normal 10px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;*/
+	background-color: #FFFFFF;
+}
+
+/*h1 
+{
+	background: #797268;
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}*/
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #037a9c; /*#1E90FF;*/
+	font-weight: bold;
+	text-decoration: none;
+	cursor: hand;
+	text-transform:uppercase;
+}
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #3a9116; /*#87CEFA;*/
+	font-weight: bold;
+	text-decoration: none;
+	cursor: hand;
+}
+.Calendar 
+{ 
+    border: solid 0px #c1dad7; 
+}
+.Calendar td
+{
+    padding: 1px 1px 1px 1px;
+}
+.Grid 
+{ 
+    border: solid 1px #c1dad7; 
+}
+.Grid td
+{
+    border: solid 1px #c1dad7 !important;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+/*.GridHeader
+{
+    font-weight: bold;
+    background-color: #00aec7; /*#1E90FF;*/
+}*/
+.GridItem
+{
+    background-color: #1E90FF;
+}
+.GridAltItem
+{
+    background-color: white;
+}
+.gridpager, .gridpager td
+{    
+    border: solid 0px #c1dad7;
+    text-align: left;
+    color: #1E90FF;    
+    font-weight: bold;
+    text-decoration: none;
+}
+.gridpager a
+{
+    color: #87CEFA;
+    font-weight: normal;
+}
+#principal
+{
+    width: 980px;
+}
+/*
+#LoginUsuario
+{
+    width: 800px;
+}
+*/
+.xx
+{
+	background-color:Black;
+	width: 250px;
+	height:500px;
+}
+
+#CambioEstado
+{
+	margin-top:50px;
+	height:400px;
+	text-align:center;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	/*font-size: 13px;
+	font: bold 10px;*/
+}
+
+.Grid 
+{ 
+    border: solid 1px #c1dad7; 
+}
+
+
+/******************************************************/
+/******************************************************/
+/******************************************************/
+
+.TablaInterior td
+{
+    border: solid 0px #c1dad7 !important;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+}
+
+.TablaInterior2 td
+{
+    border: solid 0px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height:0px;
+}
+
+
+.titulo2
+{
+	 width: 50px !important;
+	 text-align: left !important;
+}
+.ValorTituloDos
+{
+	width: 70px !important;
+	text-align: right !important;
+}
+.ColumnaCargo
+{
+	 width: 40px !important;
+	 text-align: left !important;
+}
+.ValorColumnaCargo
+{
+	width: 60px !important;
+	text-align: right !important;
+}
+.ColumnaAdmin
+{
+	 width: 20px !important;
+	 text-align: left !important;
+}
+.ValorColumnaPorcen
+{
+	width: 20px !important;
+	text-align: right !important;
+}
+.ColumnaAdmin1
+{
+	width: 30% !important;
+	text-align: left !important;
+}
+.ColumnaAdmin2
+{
+	width: 30% !important;
+	text-align: right !important;
+}
+.signoPeso
+{
+	width: 25px;
+	text-align: right !important;
+}
+.dosPuntos
+{	
+	width: 3px;
+}	
+.Footer
+{
+	background-image: url(include/imagenes/css/fondos/reporte07.jpg);
+	background-color: #21cfe8;
+	background-repeat: repeat-x;
+}
+.Footer table, .Footer table tr, .Footer table td, .Footer table td span, .Footer span
+{
+	background-color: transparent;
+	color: #ffffff !important;
+}
+.TablaFooter td
+{
+    border: solid 0px #c1dad7;
+    /*background-color: #00aec7; /*background-color:#8eb2d6; */
+    margin: 0px 0px 0px 0px;
+    padding:  1px 1px 1px 5px;
+    text-align: center;
+    font-weight: bold;
+    color:#ffffff;
+}
+.Footer
+{
+	border:0px !important;
+	/*background-color: #00aec7; /*background-color: #8eb2d6;*/
+	/*background-color: #8eb2d6;*/
+	/*background-color: #7599c9;*/
+}
+.Footer2
+{
+	border:0px !important;
+	background-color: #00aec7; /*background-color: Silver;*
+	/*background-color: #8eb2d6;*/
+	/*background-color: #7599c9;*/
+}
+#contenedor
+{
+	width: 980px;
+	margin-left: auto;
+	margin-right:auto;
+	padding:  0px 0px 5px 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;
+	text-align: center;
+	position:relative;
+}
+#contenedorCS
+{
+	margin-left: auto;
+	margin-right:auto;
+	padding:  0px 0px 5px 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;
+	text-align: center;
+	position:relative;
+}
+.CS
+{
+	width: 980px !important;
+}
+.CSParticipantes
+{
+	width: 100%;
+}
+/*#filtros
+{
+	text-align:center;
+}*/
+#Grafico
+{
+	text-align:center;
+}
+#GraficoGrid
+{
+	width:980px;
+	float:left;
+	text-align:center;
+}
+
+/*******************************************************/
+/*****************Cabecera Usuario**********************/
+/*******************************************************/
+#Cabecera
+{
+	clear :both;
+	width:980px;
+	text-align: center;
+}
+#DatosUsuario
+{
+	width:600px;
+	border:0px;
+	display:inline-block;
+	float: left;
+	/*margin-bottom:15px;
+	margin-top:10px;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;*/
+}
+#DatosUsuario td
+{
+	padding: 0px 2px 0px 2px;
+	border:0px;
+	text-align:left;
+}
+.titDatos1
+{
+	padding-left: 15px !important;
+	width: 60px;
+}
+.CostoAdministacion
+{
+	padding-left: 15px !important;
+	color: Red;
+}
+.CabeceraRasonSocial
+{	
+	padding-left: 15px !important;
+}
+.Datos1
+{
+	width: 200px;
+}
+.titFax
+{
+	width: 26px;
+}
+.fono, .fax
+{
+	width: 87px;
+}
+.dosPuntos
+{
+	width: 1px;
+}
+
+#filtros
+{
+	width: 379px;
+	text-align: center;
+	display: inline-block;
+	float:right;
+}
+#filtrosCarga
+{
+	width: 379px;
+	margin-left: auto;
+	margin-right:auto;
+	text-align: center;
+}
+#contenido
+{
+	min-height: 370px !important;
+	background-color: #fff;
+	clear:both ;
+}
+/*******************************************************/
+/*****************Fin Cabecera Usuario******************/
+/*******************************************************/
+
+
+#resultados
+{
+	width: 980px;
+	clear:right;
+	text-align: center;
+}
+.Participantes
+{
+	width: 1500px !important;
+}
+.AlineacionIzquierda
+{
+	padding-left: 5px !important;
+	text-align:left !important;
+}
+.AlineacionDerecha
+{
+	text-align:right !important;
+	padding-right: 2px;
+}
+.AlineacionCentro
+{
+	text-align:center  !important;
+}
+#tablaFichaEmpresa
+{
+	width: 100%;
+}
+#tablaFichaEmpresa th
+{
+	width: 100%;
+}
+#tablaFichaEmpresa td
+{
+	width: 33.33%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+}
+
+/*******************************************************/
+/*****************Resumen Cuentas***********************/
+/*******************************************************/
+#CuentasPeriodoActual, #CuentasPeriodoAnterior, #CuentasCongelados, #BecasFinanciamientoOtic
+{
+	width: 100%;
+}
+#tablaPeriodoActual, #tablaPeriodoAnterior, #tablaCongelados, #tablaBecas
+{
+	width: 100%;
+}
+#tablaPeriodoActual th, #tablaPeriodoAnterior th, #tablaCongelados th
+{
+	width: 100%;
+	text-align: center;
+}
+#tablaBecas th
+{
+	width: 50%;
+	text-align: center;
+}
+#tablaPeriodoActual td, #tablaPeriodoAnterior td, #tablaCongelados td, #tablaBecas td
+{
+	width: 50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+}
+.TablasCuentas
+{
+	width: 100%;
+}
+.TituloIzquierda
+{
+	width: 60% !important;
+	text-align: left  !important;
+}
+.TituloDerecha
+{
+	width: 40% !important;
+	text-align: right  !important;
+}
+.TituloDato
+{
+	width: 60% !important;
+	text-align:right;
+}
+.Indicador
+{
+	width: 20% !important;
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+.ValorDato
+{
+	width: 20% !important;
+	text-align:right;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+.ValorDestacado
+{
+	color: Red;
+	text-transform: uppercase;
+}
+.IndicadorDoble
+{
+	margin-right: 15px;
+}
+.DestacadoRojo
+{
+	background-image: url(include/imagenes/css/fondos/reporte05.jpg); 
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color: #e6bfb8;
+	color:#5C2728;
+}
+.DestacadoVerde
+{
+	background-image: url(include/imagenes/css/fondos/reporte04.jpg); 
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color: #76eeff; /*#15c3dc; /*#cbe3b4;*/
+	color:#fff; /*31400F;*/
+}
+.TituloGrupo
+{
+	background-image: url(include/imagenes/css/fondos/reporte07.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color: #21cfe8; /*#00aec7;/*#ffd744; /*#2f4b8d;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #fff !important;
+	font-size: 15pt;
+}
+/*******************************************************/
+/*****************Fin Resumen Cuentas*******************/
+/*******************************************************/
+
+
+/*******************************************************/
+/***********************Menu****************************/
+/*******************************************************/
+#bannner{
+ width:100%;
+ text-align:center;
+}
+
+/*******************************************************/
+/*******************Fin Menu****************************/
+/*******************************************************/
+
+#ContenedorMenu
+{
+	width: 980px;
+	height: 530px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+	background-color: #fff;
+} 
+.menu
+{
+	width: 220px;
+	margin-left:auto;
+	margin-right:auto;
+} 
+.menu ul   
+{   
+	width: 100%;
+	padding:3px;   
+	margin:0px;
+	z-index: 0;
+	
+	
+}   
+.menu ul li   
+{   
+	background-color: #00aec7;/*#2a89e2;*/
+	font-family:Arial, Helvetica, sans-serif;   
+	font-size:11px;   
+	color:#FFFFFF;   
+	line-height:32px;
+	list-style-type:none;   
+	text-indent:8px;
+	position:relative;
+	z-index: 0;
+	height: 30px;
+	width: 220px;
+ }  
+.menu ul li a   
+{
+	display:block;
+	width: 100%; 
+	text-decoration:none;   
+	color:#FFFFFF;   
+	background-color: #00aec7; /*#2a89e2;*/
+	
+}
+.menu ul li a:link, .menu ul li a:visited
+{ 
+	background:url(./imagenes/menu_selected.png) no-repeat;  	
+}
+.menu ul li a:hover, .menu ul li a:active
+{ 
+	
+	background-image: url(include/imagenes/css/fondo-botones-hover.jpg);
+    background-color:#7e979c; 
+    color: #ffffff;
+    border: solid 1px #cccccc;
+}
+.menu ul li ul
+{
+	display:none;
+}
+
+.menu ul li:hover ul
+{
+	
+	display:block;
+	padding:3px; 
+	margin-left: 220px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	
+	
+}
+
+.menu ul li ul li
+{
+	display:block;
+	font-size: 11px;
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color:#FFFFFF;   
+	line-height:32px;   
+	list-style-type:none;   
+	text-indent:8px;
+	padding: 0px;
+	z-index: 1;   
+}   
+.menu ul li ul li a   
+{
+	display:block;
+	width: 100%; 
+	text-decoration:none;   
+	color:#FFFFFF;      
+	background:url(./imagenes/menu_selected.png) no-repeat;
+	padding-left: 3px !important;
+	z-index: 1; 
+}  
+.xxx
+{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: right !important;
+}
+.xxx2
+{
+	width: 250px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: left !important;
+	white-space: nowrap !important;
+}
+.TablaCursoContratado
+{
+	width: 960px;
+	margin-left: auto;
+	margin-right:auto;
+}
+.GridCursoContratado 
+{ 
+	width: 960px;
+	margin-left: auto;
+	margin-right:auto;
+    border: solid 1px #c1dad7; 
+}
+.GridCursoContratado td
+{
+    border: solid 1px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+/*.GridHeader
+{
+    font-weight: bold;
+    background-color: #1E90FF;
+}*/
+.GridItem
+{
+    background-color: #1E90FF;
+}
+.GridAltItem
+{
+    background-color: white;
+}
+
+/****************************************************/
+#header 
+{
+    float:left;
+    width:100%;
+    background:#DAE0D2 url("include/imagenes/css/pestanas/bg.gif") repeat-x bottom;
+    font-size:93%;
+    line-height:normal;
+    margin-bottom: 10px;    
+    margin-top: 5px;
+}
+#header ul 
+{
+    margin:0;
+    padding:5px 5px 0;
+    list-style:none;
+}
+#header li 
+{
+    float:left;
+    background:url("include/imagenes/css/pestanas/left_both.png") no-repeat left top;
+    margin:0;
+    padding: 0 0 0 8px;
+    border-bottom:1px solid #765;
+
+}
+#header a 
+{
+    float:left;
+    display:block;
+    width:.1em;
+    background:url("include/imagenes/css/pestanas/right_both.png") no-repeat right top;
+    padding: 3px 10px 3px 0px;
+    text-decoration:none;
+    font-weight:bold;
+    color: #fff; /*#765;*/
+    height: 22px;
+}
+#header > ul a 
+{
+    width:auto;
+    max-width: 50px !important;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#header a 
+{
+    float:none;
+    min-width: 40px !important;
+}
+/* End IE5-Mac hack */
+#header a:hover {
+    color: #037a9c; /*#333;*/
+}
+.pestanaconsolaseleccionada
+{
+    background-position:0 -150px !important;
+    border-width:0 !important;
+}
+.pestanaconsolaseleccionada a
+{
+    background-position:100% -150px !important;
+    padding-bottom:5px !important;
+    color:#333 !important;
+}
+#header li:hover, #header li:hover a 
+{
+    background-position:0% -150px;
+    color:#333;
+}
+#header li:hover a 
+{
+    background-position:100% -150px;
+}
+
+
+/****************************************************/
+/****************************************************/
+/****************************************************/
+#Login
+{
+                width: 780px;
+                height: 407px;
+                margin-left: auto;
+                margin-right: auto;
+                background-image: url(include/imagenes/css/fondos/ingreso01.png);
+                background-repeat: no-repeat;
+                margin-top: 0px;
+}
+#LoginUsuario
+{
+                padding-top: 40px;
+                margin-left: 15px;
+                background-color: Transparent;
+                width: 220px;
+                text-align: center;
+}
+/*#LoginUsuario .btnLogin
+{
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                color: #037a9c;
+                text-decoration: none;
+                font-weight: bold;
+}*/
+
+/*#Login
+{
+	width: 780px;
+	height: 407px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(include/imagenes/css/fondos/ingreso01.png);
+	background-repeat: no-repeat;
+	margin-top: 0px;
+}
+#LoginUsuario
+{
+	padding-top: 3px;
+	margin-left: 3px;
+	background-color: Transparent;
+	width: 940px;
+	height: 9px;
+	text-align: center;
+	position:relative;
+}
+#LoginUsuario .btnLogin
+{
+	font-weight: bold;
+	position:absolute;
+	bottom:0px;
+	left:95px;
+	width: 110px;
+	background-image: url(include/imagenes/css/fondos/fondo_boton_login.png);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#a1cdf2;
+	color: #bcd6eb;
+}*/
+.tituloTexto
+{
+	color: #037a9c;
+	/*color: #bcd6eb;*/
+	text-decoration: none;
+	font-weight: bold;
+	width: 80px;
+	display: inline-block;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	text-align: right;
+	background-color: Transparent;
+}
+.datoTexto
+{
+	text-decoration: none;
+	font-weight: bold;
+	width: 100px;
+	display: inline-block;
+	margin-bottom: 3px;
+	margin-top: 3px;
+}
+#resultadoCarga
+{
+	/*height: 285px !important;*/
+	padding-top: 15px;
+	text-align: center;
+}
+#grdLogs
+{
+	width: 960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#pie
+{
+	width :980px;
+	height:32px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	background-image:url(include/imagenes/css/pie/pie.png);
+	background-repeat:no-repeat;
+	font-weight: bold;
+	line-height:2.3em;
+	
+}
+.textoPie
+{
+	color: #ffffff;
+	font-size: 10px;
+	font-weight: bold;
+	width: 650px;
+	margin-left: 80px;
+	padding-top:0px;
+}
+#resultadosGraficos
+{
+	min-height: 890px;
+}
+#graficos
+{
+	margin-top:30px;
+	width: 500px;
+	float: left;
+}
+#grafico1, #grafico2, #grafico3
+{
+	padding: 5px;
+	width: 480px;
+	height: 280px;
+}
+	
+#resumen
+{
+	margin-top:50px;
+	width: 478px;
+	float: right;
+}
+
+#botones
+{
+	text-align: center !important;
+}
+#linkCertiSur
+{
+	width: 130px;
+	height:26px;
+	display:block;
+	background-image:url(contenido/imagenes/csseal_transp_L_v4.gif);
+	cursor:hand;
+	margin-left:auto;
+	margin-right:auto;
+}
+#FinSesion
+{
+	width: 780px;
+	height: 407px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(include/imagenes/css/fondos/ingreso01.png);
+	background-repeat: no-repeat;
+	margin-top: 0px;
+	
+}
+#FinSesion #texto
+{
+	padding-top: 0px;
+	padding-top: 50px;
+	margin-left: 30px;
+	width: 400px;
+	font-size: 12px;	
+	color: #037a9c;
+}
+#FinSesion #link
+{
+	margin-top: 5px;
+	margin-left:145px;
+	width: 500px;
+	width: 300px;
+	text-align: center;
+}
+#FinSesion a:active,#FinSesion a:hover
+{
+	color: #3a9116 !important; /*#0f2c82 !important;*/
+	
+}
+#FinSesion a:visited,#FinSesion a:link
+{
+	color: #037aa8 !important;
+}
+/***********************************************************************/
+/*********************** Wizard ****************************************/
+/***********************************************************************/
+#wizardCursoInterno
+{
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display:table;
+	height: 250px;
+}
+#wizardCurso
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display:table;
+	height: 250px;
+}
+.wizardCurso
+{
+	width: 980px;
+}
+.wizardCursoParticipantes
+{
+	width: 100%;
+}
+#wizardCurso td, #wizardCursoInterno td
+{
+	border: 0px;
+}
+#wizardCurso .sideBar, #wizardCursoInterno .sideBar
+{
+	width: 100px;
+	display:table-cell;
+	vertical-align: top;
+	border-right: 1px solid #c1dad7;
+	padding: 0px;
+}
+#wizardCurso .sideBarButtom, #wizardCursoInterno .sideBarButtom
+{
+	width: 90px;
+	display:block;
+}
+#wizardCurso .sideBarButtomParticipantes
+{
+	/*width: 90px;*/
+	display: none;
+}
+#wizardCurso .navigation, #wizardCursoInterno .navigation
+{
+	width: 850px;
+	display:block;
+	padding: 0px;
+}
+#wizardCurso .navigationButtom, #wizardCursoInterno .navigationButtom
+{
+	width: 100px;
+	display:block;
+}
+#wizardCurso .Steps, #wizardCursoInterno .Steps
+{
+	display: table-cell;
+	vertical-align:top;
+	text-align: center;
+	width: 850px;
+	padding: 0px;
+}
+.tdTextos
+{
+	text-align: left !important;
+	padding-left: 3px !important;
+	padding-right: 2px !important;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+.txtNumerico
+{
+	text-align:right;
+}
+
+#MenuPrincipal
+{
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#PopUpEmpresas ,#PopUpCursoSence ,#PopUpAlumnos
+{
+	width: 670px;
+	margin-left: auto;
+	margin-right:auto;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;	
+}
+#PopUpEmpresas #filtrosBusqueda,#PopUpCursoSence #filtrosBusqueda,#PopUpAlumnos #filtrosBusqueda,
+#PopUpEmpresas #resultadoBusqueda,#PopUpCursoSence #resultadoBusqueda,#PopUpAlumnos #resultadoBusqueda
+{
+	padding-top: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+.CambioEstados
+{
+	display:block;
+}
+
+/***********************************************************************/
+/*********************** Carta OTEC y Empresa***************************/
+/***********************************************************************/
+#DivCarta
+{
+	width:100%;
+}
+#TablaCarta
+{
+	width: 100%;
+}
+#TablaCarta th
+{
+	width: 100%;
+	text-align: left;
+}
+#TablaCarta td
+{
+	margin: opx;
+	/*padding: 0px;*/
+	border: 0px;
+	vertical-align:top;
+}
+#TablaAlumnos
+{
+	width: 100%;
+}
+#TablaAlumnos td
+{
+	margin: opx;
+	/*padding: 0px;*/
+	border: 0px;
+	vertical-align:top;
+}
+#tdTabla1
+{
+	width:45%;
+}
+#tdTabla2
+{
+	width:45%;
+}
+#tdTabla3
+{
+	width:10%;
+}
+.DatosVarios
+{
+	margin-left:2px;
+	margin-right:2px;
+}
+.TablaDatosOTEC
+{
+	width:95%;
+	border: solid 1px #c1dad7;
+}
+.TablaDatosOTEC th
+{
+	border: solid 1px #c1dad7;
+}
+
+.TablaDatosOTEC td
+{
+	padding: 3px 2px 3px 10px !important;
+}#TablaTexto
+{
+	width:100%;
+}
+#TablaTexto td
+{
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+#TablaCurso 
+{
+	width:100%;
+}
+#TablaCurso td, #TablaCurso table, #TablaCurso table td
+
+{
+	/*width:50%;*/
+	margin: opx;
+	/*padding: 0px;*/
+	/*border: 0px !important;*/
+	vertical-align:top;
+}
+#TablaHorario
+{
+	width:100%;
+}
+#TablaHorario td
+{
+	width:14.285%;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 1px 1px 1px;
+	border: solid 1px #56718c;
+	vertical-align:top;
+	text-align:center !important;
+}
+#TablaCartaFooter 
+{
+	width:100%;
+}
+#TablaCartaFooter td
+{
+	width:50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+.GridCarta 
+{ 
+	
+    border: solid 1px #c1dad7; 
+}
+.GridCarta td
+{
+    border: solid 1px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+/* Grafico 1  */
+#Grafico1, #Grafico2
+{
+	width: 970px;
+	/*height: 300px;*/
+	text-align: center;
+	margin: 5px;
+}
+#Comunicacion
+{
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 140px;
+	text-align:left;
+}
+#Comunicacion .paso1, #Comunicacion .paso2, #Comunicacion .paso3, #Comunicacion .paso4
+{
+	padding-top: 15px !important;
+}
+
+/*.Titulo
+{
+	color: #FFFFFF;
+	border-right: 1px solid #C1DAD7;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background-color: #a9ed7c; 
+	background-image:url(include/imagenes/css/fondos/reporte04.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+}*/
+
+
+#TablaCambioEstado td, th
+{
+border:1px solid #56718c;
+}
+#TablaCambioEstado th
+{
+background-image:url(include/imagenes/css/fondos/reporte04.jpg);
+background-repeat:repeat-x;
+background-color: #76eeff; /*#15c3dc; /*#a9ed7c;
+}
+
+#TablaCambioEstado2 td, th
+{
+border:1px solid #56718c;
+border-collapse: collapse;
+}
+#TablaCambioEstado2 th
+{
+background-image:url(include/imagenes/css/fondos/fondo-body01.jpg);
+background-repeat:repeat-x;
+}
+
+#TablaMensaje
+{
+	border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+}
+
+#TablaMensaje td
+{
+	border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+   /*font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;*/
+}
+#PopUpEmpresa
+{
+	width: 300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.TablaRechazo
+{
+	width: 280px;
+	margin-left:auto;
+	margin-right: auto;
+	padding-top: 100px;	
+	padding-bottom: 100px;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+}
+.TablaInterior3 
+{
+	width: 980px;
+    border: solid 0px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+    padding-top: 1px;
+}
+.TablaInterior4 
+{
+    border: solid 1px #c1dad7;
+    margin: 1px 1px 1px 1px;
+}
+.Advertencia
+{
+	color: Red;
+}
+/*****************pestañas mantenedores****************/
+#navi 
+{
+	list-style:none;	
+	margin:0;	
+	padding:0;
+}
+#navi li 
+{	
+	margin:2px;	
+	padding:0; 
+	/*Ya no necesito el padding, tambien quitare el borde que puse antes.*/	
+	float:left;
+}
+#navi li a 
+{	
+	display:block;
+	 /*Convertimos el vínculo en un bloque.*/
+	width:100px;
+	padding:4px 0;	
+	text-decoration:none;	
+	text-align:center;	
+	font-size:11px;	
+	color:#FFFFFF;	
+	background-image:url(include/imagenes/css/fondos/reporte04.jpg);
+	background-color: #76eeff; /*#15c3dc; /*#a9ed7c;*/
+}
+/*Ahora vamos con el hover:*/
+#navi li a:hover 
+{	
+	color: #3a9116; /*#3a9116;	*/
+}
+/*********************************************************/
+
+#grdResultados
+{
+	width: 95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#filtrosMantenedor, #listado
+{
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+}
+#mantenedor
+{
+	width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaFiltro
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaSucursal
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaList
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+#PestañasMantenedor 
+{
+    font-size:93%;
+    line-height:normal;  
+    margin-top: 5px;
+    width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#PestañasMantenedor ul 
+{
+    margin:0;
+    padding:5px 5px 0;
+    list-style:none;
+}
+#PestañasMantenedor li 
+{
+    float:left;
+    background:url("include/imagenes/css/pestanas/left_both_mantenedor.gif") no-repeat left top;
+    margin:0;
+    padding:0 0 0 5px;
+    border-bottom:1px solid #765;
+}
+#PestañasMantenedor a 
+{
+    float:left;
+    display:block;
+    /*width:.1em;*/
+    width: 250px;
+    background:url("include/imagenes/css/pestanas/right_both_mantenedor.gif") no-repeat right top;
+    padding: 3px 10px 3px 6px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#765;
+}
+#PestañasMantenedor > ul a 
+{
+    /*width:auto;
+    max-width: 65px !important;*/
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#PestañasMantenedor a 
+{
+    /*float:none;
+    min-width: 50px !important;*/
+}
+/* End IE5-Mac hack */
+#PestañasMantenedor a:hover {
+    color:#333;
+}
+.PestañasMantenedorseleccionada
+{
+    background-position:0 -150px !important;
+    border-width:0 !important;
+}
+.PestañasMantenedorseleccionada a
+{
+    background-position:100% -150px !important;
+    padding-bottom:5px !important;
+    color:#333 !important;
+}
+#PestañasMantenedor li:hover, #PestañasMantenedor li:hover a 
+{
+    background-position:0% -150px;
+    color:#333;
+}
+#PestañasMantenedor li:hover a 
+{
+    background-position:100% -150px;
+}
+
+hr
+{
+	width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.TablaMantenedor td
+{
+	border: solid 0.5px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+#TablaMantenedor 
+{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TablaEjecutivos 
+{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TablaMantenedorEjecutivo 
+{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TablaMantenedor td
+{
+	width:50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+#navegacion
+{
+    width: 250px;
+    padding: 15px;
+	font-size: 10px;
+	margin-left: auto;
+	margin-right:auto;
+	margin-bottom: 15px;
+	text-align:left;
+}
+#navegacion2
+{
+   width: 250px;
+    padding: 15px;
+	font-size: 10px;
+	margin-left: auto;
+	margin-right:auto;
+	margin-bottom: 15px;
+}
+#navegacion2 h1
+{
+    text-align:center;
+}
+#navegacion2 ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+
+}
+#navegacion2 ul li a 
+{
+    background-color: #2a89e2;
+    color: #ffffff;
+    display: block;
+	height: 20px;
+	width: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	text-decoration: none;
+	line-height: 20px;
+	font-weight:bold;
+	font-size: 12px;
+}
+#navegacion2 ul li a:link /*,#navegacion ul li a:visited */
+{
+    /*background-image: url(include/imagenes/css/fondo-botones.jpg);
+    background-color: #176dbd;*/
+    color: #ffffff;
+    border: solid 1px #cccccc;
+}
+#navegacion2 ul li a:hover, #navegacion ul li a:active 
+{
+    background-image: url(include/imagenes/css/fondo-botones-hover.jpg);
+    background-color:#7e979c; /*#2a89e2;*/
+    color: #ffffff;
+    border: solid 1px #cccccc;
+}
+#navegacion2 h1
+{
+    text-align:center;
+}
+#tablaNuevoObjeto
+{
+	width: 60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaActualizaObjeto
+{
+	width: 60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#CargaAlumno
+{
+    width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	height: 40px;
+	padding: 10px 3px 10px 3px;
+}
+#divEjemploCarga
+{
+    width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	height: 80px;
+	padding: 3px;
+}
+#tablaInforme
+{
+	width:60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#tablaInformeAgno
+{
+	width:60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.TablaEmpresas 
+{
+	width:30%;
+    margin: opx;
+	padding: 0px;
+	border: 0px;
+}
+#tablaCabezara
+{
+	margin-top:auto;
+}
+
+
+/*Grid certificado*/
+.GridCertificado 
+{ 
+    border: solid 0px #c1dad7; 
+    height:auto;
+}
+.GridCertificado td
+{
+    border: solid 0px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+/*.GridHeader
+{
+    font-weight: bold;
+    background-color: #1E90FF;
+}*/
+.GridItem
+{
+    background-color: #1E90FF;
+}
+.GridAltItem
+{
+    background-color: white;
+}
+.gridpager, .gridpager td
+{    
+    border: solid 0px #c1dad7;
+    text-align: left;
+    color: #1E90FF;    
+    font-weight: bold;
+    text-decoration: none;
+}
+.gridpager a
+{
+    color: #87CEFA;
+    font-weight: normal;
+}
+#empresa
+{
+	width: 360px;
+	height: 260px;
+	padding-left: 110px;
+	padding-right: 20px;
+	text-align:left;
+	float: left;
+}
+#empresa h3, #empresa h4, #aportes h3, #aportes h4, #documentos h3, #documentos h4
+{
+	margin: 5px 0px 5px 0px;
+	border-bottom: solid 1px #c1dad7;
+	text-align: center;
+	padding: 0px;
+}
+#empresa .titCuenta
+{
+	padding-left: 10px;
+	display: inline-block;
+	width: 200px !important;
+}
+#aportes .titCuenta
+{
+	padding-left: 10px;
+	display: inline-block;
+	width: 130px;
+}
+#aportes #boton
+{
+	width: 100%;
+	text-align: center;
+}
+#documentos .titCuenta
+{
+	padding-left: 10px;
+	display: inline-block;
+	width: 130px;
+}
+.MargenIzq
+{
+	padding-left: 10px;
+}
+.MargenIzq2
+{
+	margin-left: 10px;
+}
+#aportes, #documentos
+{
+	width: 360px;
+	padding-left: 20px;
+	padding-right: 110px;
+	text-align:left;
+	float: left;
+}
+#DatosAporte
+{
+	height: 380px;
+}
+#ingresar
+{
+	padding-bottom: 20px;
+	width: 980px !important;
+	text-align: center !important;
+}
+
+#Aporte 
+{
+	width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	padding-left: 124px;
+	padding-right: 124px;
+}
+#AnularAporte
+{
+	width: 258px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	padding-left: 124px;
+	padding-right: 124px;
+	text-align: left;
+}
+#Aporte .Tit, #Aporte .DosPuntos, #Aporte .Dato
+{
+	display: inline-block;
+	text-align: left;
+}
+#Aporte .Tit
+{
+	width: 100px;
+}
+#Aporte .DosPuntos
+{
+	width: 2px;
+}
+#Aporte .Dato
+{
+	width: 145px !important;
+	padding-left: 5px;
+}
+#tablas
+{
+	width: 903px;
+	margin-left:auto;
+	margin-right: auto;
+	height: 370px;
+}
+.AvisoDatosIzq
+{
+	width: 450px;
+	float:left; 
+}
+.AvisoDatosDer
+{
+	width: 450px;
+	float:left; 
+}
+#botonera
+{
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+
+#ficha fieldset.ficha
+{ 
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	border: 1px solid #c1dad7;
+	padding-bottom: 10px;
+	background-image: url(include/imagenes/css/cmxform-fieldset.gif);
+	background-repeat: repeat-x;
+	background-position: bottom left ;
+}
+#ficha fieldset.ficha legend 
+{
+	color: #4f6b72;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-left: 10px;
+}
+#ficha fieldset.ficha div.separacion {
+	padding: 5px;
+	padding-left: 20px;
+	display: block;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background: url(include/imagenes/css/cmxform-divider.gif) left bottom repeat-x;
+	border: 0px;
+}
+#ficha fieldset.ficha div.separacion table.ficha2Tablas
+{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: Transparent;
+}
+#ficha fieldset.ficha div.separacion table.ficha2Tablas td
+{
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: Transparent;
+}
+#ficha fieldset.ficha div.separacion table.ficha2Tablas td div
+{
+	text-align: left;
+	background-color: Transparent;
+}
+#tablaVyT
+{
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+#grdResultadosVyT
+{
+	margin-top:-1px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.margenAdvertencia
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+.margenSuperEjec,.margenSuperEjec td
+{
+	border: solid 0.5px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+}
+#margenSuperEjec2
+{
+	border: solid 0.5px #c1dad7;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+}
+.mensajeGrafico
+{
+	margin-top:auto;
+}
+
+
+
+#TablaFacturacion
+{
+	width: 100%;
+	margin-left: auto;
+	
+}
+#TablaFacturacion th
+{
+	text-align: center;
+}
+#TablaFacturacion td
+{
+	text-align: left;
+	padding: 0px;
+}
+.CabeceraUsuario
+{
+	height:10px;
+	width:100%;
+	background-color: #00aec7; /*#acc3ec;*/
+	
+}
+.CabeceraUsuario td
+{
+	background-color:Transparent;
+	color: #FFFFFF;
+}
+.oculto
+{
+	display: none;
+}
+
+
+#WizardStep2
+{
+	position:relative;
+}
+.test
+{
+	float:left;
+	margin-top:-100px;
+	
+}
+
+#Carta
+{
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	color: #4f6b72;
+}
+/*div#Carta h1 
+{
+	background: none;
+	color: #4f6b72;
+	font-size: 20px;
+	width: 100%;
+	text-align: center;
+	padding-bottom:5px;
+	padding-top: 10px;
+	margin: 0px;
+	border: 0px;
+}*/
+
+div#Carta h2
+{
+	background: none;
+	color: #4f6b72;
+	font-size: 16px;
+	width: 100%;
+	text-align: center;
+	padding-bottom:5px;
+	padding-top: 10px;
+	margin: 0px;
+	border: 0px;
+}
+#Carta div#Membrete
+{
+	float: left;
+	padding-left: 20px;
+}
+#Carta div#DatosOC
+{
+	float: right;
+	padding-right: 20px;
+}
+#Carta div#DatosOC div#Datos
+{
+	float: right;
+	padding-right: 20px;
+}
+#Carta div#DatosOC div#Logo
+{
+	float: right;
+}
+#Carta div#Alumnos
+{
+	clear: both;
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#Carta div#Curso
+{
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#Carta div#Curso div#DatosCurso
+{
+	width: 400px;
+	float: left;
+	padding-left: 60px;
+}
+#Carta div#Curso div#Valores
+{
+	width: 400px;
+	float: right;
+	padding-right: 60px;
+}
+#Carta div#Facturacion
+{
+	clear: both;
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#Carta div#Facturacion div#Otic div#OticDatos
+{
+	width: 400px;
+	float: left;
+	padding-left: 60px;
+}
+#Carta div#Facturacion div#Otic div#OticValores
+{
+	width: 400px;
+	float: right;
+	padding-right: 60px;
+}
+#Carta div#Facturacion div#Empresa
+{
+	margin-top: 30px;
+}
+#Carta div#Facturacion div#Empresa div#EmpresaDatos
+{
+	width: 400px;
+	float: left;
+	padding-left: 60px;
+	margin-top: 20px;
+}
+#Carta div#Facturacion div#Empresa div#EmpresaValores
+{
+	width: 400px;
+	float: right;
+	padding-right: 60px;
+	margin-top: 20px;
+}
+#Carta div#Facturacion span#CostoEstimado, #Carta div#Facturacion span#CostoComplementario
+{
+	clear: both;
+	clear: both;
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: right;
+}
+#Carta div#horario
+{
+	clear: both;
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+#Carta div#Requisitos
+{
+	clear: both;
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 30px;
+	text-align: center;
+}
+#Carta div#Requisitos p
+{
+	text-align: justify;
+}
+
+#Carta div#Requisitos p#RequisitosPie
+{
+	text-align: center;
+}
+#Carta div#Botonera
+{
+	clear: both;
+	width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+.TitDato
+{
+	width: 150px;
+	display: inline-block;
+}
+#Carta ul
+{
+	text-align:left;
+}
+
+#Carta div#Botonera
+{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.TextoHorario
+{
+	width:15px !important; 
+}
+
+
+
+
+
+
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+
+
+
+#cssmenu > ul {
+	list-style: none;
+	margin: 15px 0 0 0;
+	padding: 0;
+	vertical-align: baseline;
+	line-height: 1;
+}
+
+/* The container */
+#cssmenu > ul {
+	display: block;
+	position: relative;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
+	/* The list elements which contain the links */
+	#cssmenu > ul li {
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		width: 200px;
+	}
+
+		/* General link styling */
+		#cssmenu > ul li a {
+			/* Layout */
+			display: block;
+			position: relative;
+			margin: 0;
+			border-top: 1px dotted #3a3a3a;
+			border-bottom: 1px dotted #1b1b1b;
+			padding: 11px 20px;
+			width: 160px;
+
+			/* Typography */
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			color: #fff; /*#d8d8d8;*/
+			text-decoration: none;
+			text-transform: uppercase;
+			/*text-shadow: 0 1px 1px #000;*/
+			font-size: 10px;
+			font-weight: bold;
+
+			/* Background & effects */
+			background: #00aec7; /*#3158ae; /*#485765;#282828;*/
+		}
+
+		/* Rounded corners for the first link of the menu/submenus */
+		#cssmenu > ul li:first-child>a {
+
+			border-top: 0;
+		}
+
+		/* Rounded corners for the last link of the menu/submenus */
+		#cssmenu > ul li:last-child>a {
+
+			border-bottom: 0;
+		}
+
+
+		/* The hover state of the menu/submenu links */
+		#cssmenu > ul li>a:hover, #cssmenu > ul li:hover>a {
+			color: #fff;
+		
+			background: #78c14b; /*#234ba6; /*#f23f37;*/
+			background: -webkit-linear-gradient(bottom, #008b64, #4ac1a9); /* #f23f37, #f45d57);*/
+			background: -ms-linear-gradient(bottom, #008b64, #4ac1a9); /* #f23f37, #f45d57);*/
+			background: -moz-linear-gradient(bottom, #008b64, #4ac1a9); /* #f23f37, #f45d57);*/
+			background: -o-linear-gradient(bottom, #008b64, #4ac1a9); /* #f23f37, #f45d57);*/
+			
+		}
+
+		/* The arrow indicating a submenu */
+		#cssmenu > ul .has-sub>a::after {
+			content: '';
+			position: absolute;
+			top: 16px;
+			right: 10px;
+			width: 0px;
+			height: 0px;
+
+			/* Creating the arrow using borders */
+			border: 4px solid transparent;
+			border-left: 4px solid #d8d8d8; 
+		}
+
+		/* The same arrow, but with a darker color, to create the shadow effect */
+		#cssmenu > ul .has-sub>a::before {
+			content: '';
+			position: absolute;
+			top: 17px;
+			right: 10px;
+			width: 0px;
+			height: 0px;
+
+			/* Creating the arrow using borders */
+			border: 4px solid transparent;
+			border-left: 4px solid #000;
+		}
+
+		/* Changing the color of the arrow on hover */
+		#cssmenu > ul li>a:hover::after, #cssmenu > ul li:hover>a::after {
+			border-left: 4px solid #fff;
+		}
+
+		#cssmenu > ul li>a:hover::before, #cssmenu > ul li:hover>a::before {
+			border-left: 4px solid rgba(0, 0, 0, .3);
+		}
+
+	
+		/* THE SUBMENUS */
+		#cssmenu > ul ul {
+			position: absolute;
+			left: 197px;
+			top: -9999px;
+			padding-left: 5px;
+			
+			/* The fade effect, created using an opacity transition */
+			-webkit-transition: opacity .3s ease-in;
+			-moz-transition: opacity .3s ease-in;
+			-o-transition: opacity .3s ease-in;
+			-ms-transition: opacity .3s ease-in;
+		}
+
+		/* Showing the submenu when the user is hovering the parent link */
+		#cssmenu > ul li:hover>ul {
+			top: 0px;
+		
+		}
+
+
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+
+
+
+
+
+#hplResumenCobranza, #hplResumenGrafico
+{
+	font-size: 9px;
+	line-height: 0.9em;
+}
+
+
+td.locked, th.locked {
+position:relative;
+left: expression(document.getElementById("div-datagrid").scrollLeft-2); /*IE5+ only*/
+}	
+
+/*div#div-datagrid {
+width: 820px;
+overflow: auto;
+overflow-y: hidden;
+padding-bottom:50px;
+scrollbar-base-color:#ffeaff;
+}*/
+div.div-datagrid {
+width: 820px;
+overflow: auto;
+overflow-y: hidden;
+padding-bottom:50px;
+scrollbar-base-color:#ffeaff;
+}
+
+div.div-datagridParticipantes {
+width: 100%;
+overflow: scroll;
+overflow-y: hidden;
+padding-bottom:50px;
+scrollbar-base-color:#ffeaff;
+}
+
+/*.gopag 
+{
+    font-size:x-small;
+    width:20px;
+}*/
+
+.pagprev
+{
+    background:transparent url(include/imagenes/css/paginacion/previous.png) no-repeat scroll center;
+    height:1.3em;
+    width:16px;
+    cursor:pointer;
+    border:0px;
+}
+
+.pagnext
+{
+    background:transparent url(include/imagenes/css/paginacion/next.png) no-repeat scroll center;
+    height:1.3em;
+    width:16px;
+    cursor:pointer;
+    border:0px;
+}
+
+.pagfirst
+{
+    background:transparent url(include/imagenes/css/paginacion/first.png) no-repeat scroll center;
+    height:1.3em;
+    width:16px;
+    cursor:pointer;
+    border:0px;
+}
+
+.paglast
+{
+    background:transparent url(include/imagenes/css/paginacion/last.png) no-repeat scroll center;
+    height:1.3em;
+    width:16px;
+    cursor:pointer;
+    border:0px;
+        }
+        
+        
+.GridOC
+{ 
+    border: solid 1px #c1dad7; 
+}
+.GridOC td, #table2 td
+{
+    border: solid 1px #c1dad7 !important;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 1px 5px 1px !important;
+    text-align: center;
+}
+.GridOC th
+{
+    background-color: #bfbfbf !important;
+    background-image: none;
+    padding: 5px 1px 5px 10px !important;
+    border: solid 1px #c1dad7 !important;
+	background-image:url(include/imagenes/css/fondos/reporte04.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+.GridOCHeader
+{
+    font-weight: bold;
+    background-color: #bfbfbf !important;
+    background-image: none;
+}
+.GridOCItem
+{
+    background-color: #1E90FF;
+}
+.GridOCAltItem
+{
+    background-color: white;
+}
+        
+/*.GridOC
+{ 
+    border: 0px !important;	 
+}
+.GridOC td
+{
+    /*border: solid 1px #56718c !important;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}*/
+
+/*
+.GridOC th, .GridOCHeader, .GridHeader
+
+{
+	color: #FFFFFF;
+	border-right: 1px solid #C1DAD7;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background-color: #76eeff; 
+	background-image:url(include/imagenes/css/fondos/reporte04.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+.GridOCItem
+{
+    background-color: #1E90FF;
+}
+.GridOCAltItem
+{
+    background-color: white;
+}
+*/
+table.SinEspacio, table.SinEspacio th, table.SinEspacio td
+{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+input[type="button"], input[type="submit"], .btnLogin
+{
+	background-color: #00aec7 !important;
+	color: #fff;
+	padding: 2px 5px 2px 5px;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, .btnLogin:hover
+{
+	background-color: #3a9116 !important;
+	color: #fff;
+
+}
+.pagerstyle input[type="button"], input[type="button"], .pagerstyle  input[type="submit"],
+.pagerstyle input[type="button"]:hover,.pagerstyle input[type="submit"]:hover
+{
+	background-color: transparent !important;
+}
+.bordeIzquiirdo
+{
+	border-left: solid 1px #c1dad7 !important;
+}
+
+.bordeInferior
+{
+	/*border-bottom: solid 1px #c1dad7 !important;*/
+}
+
+
+
+
+
+
+
+
+
+
+/*
+#tablaMontoMaximo
+{
+	margin-top:50px;
+}
+body {
+	font: normal 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif !important;
+	color: #4f6b72;
+	background-color: #f0f4fe;
+	background-image:url(include/imagenes/css/fondos/fondo-body01.jpg);
+	background-position: top;
+	background-repeat:repeat-x;
+	margin-top: 0px;
+}
+select, option, input, textarea
+{
+	font: normal 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif !important;
+}
+th {
+	color: #FFFFFF;
+	border-right: 1px solid #C1DAD7;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background-color: #acc3ec;
+	background-image:url(include/imagenes/css/fondos/reporte03.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+table
+{
+	background: #ffffff;	
+	border-bottom: 1px solid #C1DAD7;
+	 
+}
+td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	padding: 6px 6px 6px 12px;
+	background: #ffffff;
+}
+
+
+
+input {
+	background-color: #FFFFFF;
+}
+label {
+	background-color: #FFFFFF;
+}
+select {
+	background-color: #FFFFFF;
+}
+textarea {
+	background-color: #FFFFFF;
+}
+checkbox {
+	background-color: #FFFFFF;
+}
+textbox {
+	background-color: #FFFFFF;
+}
+
+h1 
+{
+	background: #797268;
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #1E90FF;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: hand;
+}
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #87CEFA;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: hand;
+}
+.Calendar 
+{ 
+    border: solid 0px #56718c; 
+}
+.Calendar td
+{
+    padding: 1px 1px 1px 1px;
+}
+.Grid 
+{ 
+    border: solid 1px #56718c; 
+}
+.Grid td
+{
+    border: solid 1px #56718c !important;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+.GridHeader
+{
+    font-weight: bold;
+    background-color: #1E90FF;
+}
+.GridItem
+{
+    background-color: #1E90FF;
+}
+.GridAltItem
+{
+    background-color: white;
+}
+.gridpager, .gridpager td
+{    
+    border: solid 0px #F8F8FF;
+    text-align: left;
+    color: #1E90FF;    
+    font-weight: bold;
+    text-decoration: none;
+}
+.gridpager a
+{
+    color: #87CEFA;
+    font-weight: normal;
+}
+#principal
+{
+    width: 980px;
+}
+.xx
+{
+	background-color:Black;
+	width: 250px;
+	height:500px;
+}
+
+#CambioEstado
+{
+	margin-top:50px;
+	height:400px;
+	text-align:center;
+}
+
+.Grid 
+{ 
+    border: solid 1px #ccc; 
+}
+
+
+.TablaInterior td
+{
+    border: solid 0px #56718c !important;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+}
+
+.TablaInterior2 td
+{
+    border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height:0px;
+}
+
+
+.titulo2
+{
+	 width: 50px !important;
+	 text-align: left !important;
+}
+.ValorTituloDos
+{
+	width: 70px !important;
+	text-align: right !important;
+}
+.ColumnaCargo
+{
+	 width: 40px !important;
+	 text-align: left !important;
+}
+.ValorColumnaCargo
+{
+	width: 60px !important;
+	text-align: right !important;
+}
+.ColumnaAdmin
+{
+	 width: 20px !important;
+	 text-align: left !important;
+}
+.ValorColumnaPorcen
+{
+	width: 20px !important;
+	text-align: right !important;
+}
+.ColumnaAdmin1
+{
+	width: 30% !important;
+	text-align: left !important;
+}
+.ColumnaAdmin2
+{
+	width: 30% !important;
+	text-align: right !important;
+}
+.signoPeso
+{
+	width: 25px;
+	text-align: right !important;
+}
+.dosPuntos
+{	
+	width: 3px;
+}	
+.TablaFooter td
+{
+    border: solid 0px #56718c;
+    background-color:#8eb2d6; 
+    margin: 0px 0px 0px 0px;
+    padding:  1px 1px 1px 5px;
+    text-align: center;
+    font-weight: bold;
+    color:#ffffff;
+}
+.Footer
+{
+	border:0px !important;
+	background-color: #8eb2d6;
+}
+.Footer2
+{
+	border:0px !important;
+	background-color: Silver;
+}
+#contenedor
+{
+	width: 980px;
+	margin-left: auto;
+	margin-right:auto;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;
+	text-align: center;
+}
+#Grafico
+{
+	text-align:center;
+}
+#GraficoGrid
+{
+	width:980px;
+	float:left;
+	text-align:center;
+}
+
+#Cabecera
+{
+	width:980px;
+	text-align: center;
+}
+#DatosUsuario
+{
+	width:600px;
+	border:0px;
+	display:inline-block;
+	float: left;
+}
+#DatosUsuario td
+{
+	padding: 0px 2px 0px 2px;
+	border:0px;
+	text-align:left;
+}
+.titDatos1
+{
+	padding-left: 15px !important;
+	width: 60px;
+}
+.CostoAdministacion
+{
+	padding-left: 15px !important;
+	color: Red;
+}
+.CabeceraRasonSocial
+{	
+	padding-left: 15px !important;
+}
+.Datos1
+{
+	width: 200px;
+}
+.titFax
+{
+	width: 26px;
+}
+.fono, .fax
+{
+	width: 87px;
+}
+.dosPuntos
+{
+	width: 1px;
+}
+
+#filtros
+{
+	width: 379px;
+	text-align: center;
+	display: inline-block;
+	float:right;
+}
+#filtrosCarga
+{
+	width: 379px;
+	margin-left: auto;
+	margin-right:auto;
+	text-align: center;
+}
+#contenido
+{
+	min-height: 370px !important;
+	background-color: #fff;
+	clear:right;
+}
+
+
+#resultados
+{
+	width: 980px;
+	clear:right;
+	text-align: center;
+}
+.AlineacionIzquierda
+{
+	padding-left: 5px !important;
+	text-align:left !important;
+}
+.AlineacionDerecha
+{
+	text-align:right !important;
+	padding-right: 2px;
+}
+.AlineacionCentro
+{
+	text-align:center  !important;
+}
+#tablaFichaEmpresa
+{
+	width: 100%;
+}
+#tablaFichaEmpresa th
+{
+	width: 100%;
+}
+#tablaFichaEmpresa td
+{
+	width: 33.33%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+}
+#CuentasPeriodoActual, #CuentasPeriodoAnterior, #CuentasCongelados, #BecasFinanciamientoOtic
+{
+	width: 100%;
+}
+#tablaPeriodoActual, #tablaPeriodoAnterior, #tablaCongelados, #tablaBecas
+{
+	width: 100%;
+}
+#tablaPeriodoActual th, #tablaPeriodoAnterior th, #tablaCongelados th
+{
+	width: 100%;
+	text-align: center;
+}
+#tablaBecas th
+{
+	width: 50%;
+	text-align: center;
+}
+#tablaPeriodoActual td, #tablaPeriodoAnterior td, #tablaCongelados td, #tablaBecas td
+{
+	width: 50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+}
+.TablasCuentas
+{
+	width: 100%;
+}
+.TituloIzquierda
+{
+	width: 60% !important;
+	text-align: left  !important;
+}
+.TituloDerecha
+{
+	width: 40% !important;
+	text-align: right  !important;
+}
+.TituloDato
+{
+	width: 60% !important;
+	text-align:right;
+}
+.Indicador
+{
+	width: 20% !important;
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+.ValorDato
+{
+	width: 20% !important;
+	text-align:right;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+.ValorDestacado
+{
+	color: Red;
+	text-transform: uppercase;
+}
+.IndicadorDoble
+{
+	margin-right: 15px;
+}
+.DestacadoRojo
+{
+	background-image: url(include/imagenes/css/fondos/reporte05.jpg); 
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color: #e6bfb8;
+	color:#5C2728;
+}
+.DestacadoVerde
+{
+	background-image: url(include/imagenes/css/fondos/reporte04.jpg); 
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color: #cbe3b4;
+	color:#31400F;
+}
+.TituloGrupo
+{
+	background-image: url(include/imagenes/css/fondos/reporte02.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color: #2f4b8d;
+}
+#bannner{
+ width:100%;
+ text-align:center;
+}
+#menu
+{
+	width: 100%;
+}	
+.menu1 
+{
+	padding:0 0 0 32px; 
+	margin:0; 
+	list-style:none;
+	height:35px; 
+	background-color:#fff;
+	background-image: url(include/imagenes/css/fondos/fondo-menu.gif); 
+	position:relative; 
+	border:1px solid #000; 
+	border-width:0 1px; 
+	border-bottom:1px solid #444;
+}
+.menu1 li 
+{
+	float:left;
+}
+.menu1 li a 
+{
+	display:block; 
+	float:left; 
+	height:35px;
+	line-height:35px; 
+	color: #FFE9D2; 
+	text-decoration:none; 
+	font-size:11px; 
+	font-family:arial, verdana, sans-serif; 
+	font-weight:bold; 
+	text-align:center; 
+	padding:0 0 0 8px; 
+	cursor:pointer;
+}
+.menu1 li a b 
+{
+	float:left; 
+	display:block; 
+	padding:0 16px 0 8px;
+}
+.menu1 li.current a 
+{
+	color:#fff; 
+	background:url(include/imagenes/css/fondos/fondo-current-hover.gif);
+}
+.menu1 li.current a b 
+{
+	background:url(include/imagenes/css/fondos/fondo-current-hover.gif) no-repeat right top;
+}
+.menu1 li a:hover 
+{
+	color:#fff; 
+	background:#A7551C url(include/imagenes/css/fondos/fondo-current.gif);
+}
+.menu1 li a:hover b 
+{
+	background:url(include/imagenes/css/fondos/fondo-current.gif) no-repeat right top;
+}
+.menu1 li.current a:hover 
+{
+	color:#fff; 
+	background:#A7551C url(include/imagenes/css/fondos/fondo-current-hover.gif); 
+	cursor:default;
+}
+.menu1 li.current a:hover b 
+{
+	background:url(include/imagenes/css/fondos/fondo-current-hover.gif) no-repeat right top;
+}
+.xxx
+{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: right !important;
+}
+.xxx2
+{
+	width: 250px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: left !important;
+	white-space: nowrap !important;
+}
+.TablaCursoContratado
+{
+	width: 960px;
+	margin-left: auto;
+	margin-right:auto;
+}
+.GridCursoContratado 
+{ 
+	width: 960px;
+	margin-left: auto;
+	margin-right:auto;
+    border: solid 1px #56718c; 
+}
+.GridCursoContratado td
+{
+    border: solid 1px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.GridHeader
+{
+    font-weight: bold;
+    background-color: #1E90FF;
+}
+.GridItem
+{
+    background-color: #1E90FF;
+}
+.GridAltItem
+{
+    background-color: white;
+}
+
+#header 
+{
+    float:left;
+    width:100%;
+    background:#DAE0D2 url("include/imagenes/css/pestanas/bg.gif") repeat-x bottom;
+    font-size:93%;
+    line-height:normal;
+    margin-bottom: 10px;    
+    margin-top: 5px;
+}
+#header ul 
+{
+    margin:0;
+    padding:5px 5px 0;
+    list-style:none;
+}
+#header li 
+{
+    float:left;
+    background:url("include/imagenes/css/pestanas/left_both.gif") no-repeat left top;
+    margin:0;
+    padding:0 0 0 5px;
+    border-bottom:1px solid #765;
+}
+#header a 
+{
+    float:left;
+    display:block;
+    width:.1em;
+    background:url("include/imagenes/css/pestanas/right_both.gif") no-repeat right top;
+    padding: 3px 10px 3px 6px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#765;
+    height: 22px;
+}
+#header > ul a 
+{
+    width:auto;
+    max-width: 65px !important;
+}
+#header a 
+{
+    float:none;
+    min-width: 50px !important;
+}
+#header a:hover {
+    color:#333;
+}
+.pestanaconsolaseleccionada
+{
+    background-position:0 -150px !important;
+    border-width:0 !important;
+}
+.pestanaconsolaseleccionada a
+{
+    background-position:100% -150px !important;
+    padding-bottom:5px !important;
+    color:#333 !important;
+}
+#header li:hover, #header li:hover a 
+{
+    background-position:0% -150px;
+    color:#333;
+}
+#header li:hover a 
+{
+    background-position:100% -150px;
+}
+
+#Login
+{
+	width: 780px;
+	height: 380px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(include/imagenes/css/fondos/ingreso01.png);
+	background-repeat: no-repeat;
+	margin-top: 0px;
+}
+#LoginUsuario
+{
+	padding-top: 40px;
+	margin-left: 15px;
+	background-color: Transparent;
+	width: 220px;
+	text-align: center;
+}
+.btnLogin
+{
+	text-decoration: none;
+	font-weight: bold;
+}
+.tituloTexto
+{
+	color: #002F76;
+	text-decoration: none;
+	font-weight: bold;
+	width: 80px;
+	display: inline-block;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	text-align: right;
+}
+.datoTexto
+{
+	text-decoration: none;
+	font-weight: bold;
+	width: 100px;
+	display: inline-block;
+	margin-bottom: 3px;
+	margin-top: 3px;
+}
+#resultadoCarga
+{
+	padding-top: 15px;
+	text-align: center;
+}
+#grdLogs
+{
+	width: 960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#pie
+{
+	width :980px;
+	height:32px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	background-image:url(include/imagenes/css/pie/pie.jpg);
+	background-repeat:no-repeat;
+	color: #ffffff;
+	font-weight: bold;
+}
+.textoPie
+{
+	color: #ffffff;
+	font-size: 10px;
+	font-weight: bold;
+	width: 450px;
+	margin-left: 280px;
+	padding-top:13px;
+}
+#resultadosGraficos
+{
+	min-height: 890px;
+}
+#graficos
+{
+	margin-top:30px;
+	width: 500px;
+	float: left;
+}
+#grafico1, #grafico2, #grafico3
+{
+	padding: 5px;
+	width: 480px;
+	height: 280px;
+}
+	
+#resumen
+{
+	margin-top:50px;
+	width: 478px;
+	float: right;
+}
+
+#botones
+{
+	text-align: center !important;
+}
+#linkCertiSur
+{
+	width: 130px;
+	height:26px;
+	display:block;
+	background-image:url(contenido/imagenes/csseal_transp_L_v4.gif);
+	cursor:hand;
+	margin-left:auto;
+	margin-right:auto;
+}
+#FinSesion
+{
+	width: 780px;
+	height: 380px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(include/imagenes/css/fondos/ingreso01.png);
+	background-repeat: no-repeat;
+	margin-top: 0px;
+}
+#FinSesion #texto
+{
+	padding-top: 50px;
+	margin-top: 50px;
+	margin-left: 30px;
+	width: 500px;
+	font-size: 12px;	
+}
+#FinSesion #link
+{
+	margin-top: 20px;
+	margin-left: 30px;
+	width: 500px;
+	width: 300px;
+	text-align: center;
+	
+}
+
+#wizardCurso, #wizardCursoInterno
+{
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display:table;
+	height: 250px;
+}
+#wizardCurso td, #wizardCursoInterno td
+{
+	border: 0px;
+}
+#wizardCurso .sideBar, #wizardCursoInterno .sideBar
+{
+	width: 100px;
+	display:table-cell;
+	vertical-align: top;
+	border-right: 1px solid #C1DAD7;
+	padding: 0px;
+}
+#wizardCurso .sideBarButtom, #wizardCursoInterno .sideBarButtom
+{
+	width: 90px;
+	display:block;
+}
+#wizardCurso .navigation, #wizardCursoInterno .navigation
+{
+	width: 850px;
+	display:block;
+	padding: 0px;
+}
+#wizardCurso .navigationButtom, #wizardCursoInterno .navigationButtom
+{
+	width: 100px;
+	display:block;
+}
+#wizardCurso .Steps, #wizardCursoInterno .Steps
+{
+	display: table-cell;
+	vertical-align:top;
+	text-align: center;
+	width: 850px;
+	padding: 0px;
+}
+.tdTextos
+{
+	text-align: left !important;
+	padding-left: 3px !important;
+	padding-right: 2px !important;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+.txtNumerico
+{
+	text-align:right;
+}
+
+#MenuPrincipal
+{
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#PopUpEmpresas ,#PopUpCursoSence ,#PopUpAlumnos
+{
+	width: 670px;
+	margin-left: auto;
+	margin-right:auto;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;	
+}
+#PopUpEmpresas #filtrosBusqueda,#PopUpCursoSence #filtrosBusqueda,#PopUpAlumnos #filtrosBusqueda,
+#PopUpEmpresas #resultadoBusqueda,#PopUpCursoSence #resultadoBusqueda,#PopUpAlumnos #resultadoBusqueda
+{
+	padding-top: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+.CambioEstados
+{
+	display:block;
+}
+
+#DivCarta
+{
+	width:100%;
+}
+#TablaCarta
+{
+	width: 100%;
+}
+#TablaCarta th
+{
+	width: 100%;
+	text-align: left;
+}
+#TablaCarta td
+{
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+#tdTabla1
+{
+	width:45%;
+}
+#tdTabla2
+{
+	width:45%;
+}
+#tdTabla3
+{
+	width:10%;
+}
+.DatosVarios
+{
+	margin-left:2px;
+	margin-right:2px;
+}
+.TablaDatosOTEC
+{
+	width:100%;
+}
+#TablaTexto
+{
+	width:100%;
+}
+#TablaTexto td
+{
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+#TablaCurso 
+{
+	width:100%;
+}
+#TablaCurso td
+{
+	width:50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+#TablaHorario
+{
+	width:100%;
+}
+#TablaHorario td
+{
+	width:14.285%;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 1px 1px 1px;
+	border: solid 1px #56718c;
+	vertical-align:top;
+	text-align:center !important;
+}
+#TablaCartaFooter 
+{
+	width:100%;
+}
+#TablaCartaFooter td
+{
+	width:50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+.GridCarta 
+{ 
+	
+    border: solid 1px #56718c; 
+}
+.GridCarta td
+{
+    border: solid 1px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+#Grafico1, #Grafico2
+{
+	width: 970px;
+	text-align: center;
+	margin: 5px;
+}
+#Comunicacion
+{
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 140px;
+	text-align:left;
+}
+#Comunicacion .paso1, #Comunicacion .paso2, #Comunicacion .paso3, #Comunicacion .paso4
+{
+	padding-top: 15px !important;
+}
+
+.Titulo
+{
+	color: #FFFFFF;
+	border-right: 1px solid #C1DAD7;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background-color: #acc3ec;
+	background-image:url(include/imagenes/css/fondos/reporte03.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+
+
+#TablaCambioEstado td, th
+{
+border:1px solid #56718c;
+}
+#TablaCambioEstado th
+{
+background-image:url(include/imagenes/css/fondos/reporte03.jpg);
+background-repeat:repeat-x;
+}
+
+#TablaCambioEstado2 td, th
+{
+border:1px solid #56718c;
+border-collapse: collapse;
+}
+#TablaCambioEstado2 th
+{
+background-image:url(include/imagenes/css/fondos/fondo-body01.jpg);
+background-repeat:repeat-x;
+}
+
+#TablaMensaje
+{
+	border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+}
+
+#TablaMensaje td
+{
+	border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+}
+#PopUpEmpresa
+{
+	width: 300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.TablaRechazo
+{
+	width: 280px;
+	margin-left:auto;
+	margin-right: auto;
+	padding-top: 100px;	
+	padding-bottom: 100px;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+}
+.TablaInterior3 
+{
+	width: 980px;
+    border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 5px;
+    text-align: center;
+    padding-top: 1px;
+}
+.TablaInterior4 
+{
+    border: solid 1px #56718c;
+    margin: 1px 1px 1px 1px;
+}
+.Advertencia
+{
+	color: Red;
+}
+#navi 
+{
+	list-style:none;	
+	margin:0;	
+	padding:0;
+}
+#navi li 
+{	
+	margin:2px;	
+	padding:0; 
+	float:left;
+}
+#navi li a 
+{	
+	display:block;
+	width:100px;
+	padding:4px 0;	
+	text-decoration:none;	
+	text-align:center;	
+	font-size:11px;	
+	color:#FFFFFF;	
+	background-image:url(include/imagenes/css/fondos/reporte03.jpg);
+}
+#navi li a:hover 
+{	
+	color:#99CC00;	
+}
+
+#grdResultados
+{
+	width: 95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#filtrosMantenedor, #listado
+{
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+}
+#mantenedor
+{
+	width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaFiltro
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaSucursal
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaList
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+#PestañasMantenedor 
+{
+    font-size:93%;
+    line-height:normal;  
+    margin-top: 5px;
+    width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#PestañasMantenedor ul 
+{
+    margin:0;
+    padding:5px 5px 0;
+    list-style:none;
+}
+#PestañasMantenedor li 
+{
+    float:left;
+    background:url("include/imagenes/css/pestanas/left_both_mantenedor.gif") no-repeat left top;
+    margin:0;
+    padding:0 0 0 5px;
+    border-bottom:1px solid #765;
+}
+#PestañasMantenedor a 
+{
+    float:left;
+    display:block;
+    width: 250px;
+    background:url("include/imagenes/css/pestanas/right_both_mantenedor.gif") no-repeat right top;
+    padding: 3px 10px 3px 6px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#765;
+}
+#PestañasMantenedor > ul a 
+{
+}
+#PestañasMantenedor a 
+{
+}
+#PestañasMantenedor a:hover {
+    color:#333;
+}
+.PestañasMantenedorseleccionada
+{
+    background-position:0 -150px !important;
+    border-width:0 !important;
+}
+.PestañasMantenedorseleccionada a
+{
+    background-position:100% -150px !important;
+    padding-bottom:5px !important;
+    color:#333 !important;
+}
+#PestañasMantenedor li:hover, #PestañasMantenedor li:hover a 
+{
+    background-position:0% -150px;
+    color:#333;
+}
+#PestañasMantenedor li:hover a 
+{
+    background-position:100% -150px;
+}
+
+hr
+{
+	width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.TablaMantenedor td
+{
+	border: solid 0.5px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+#TablaMantenedor 
+{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TablaEjecutivos 
+{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TablaMantenedorEjecutivo 
+{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TablaMantenedor td
+{
+	width:50%;
+	margin: opx;
+	padding: 0px;
+	border: 0px;
+	vertical-align:top;
+}
+#navegacion
+{
+    width: 250px;
+    padding: 15px;
+	font-size: 10px;
+	margin-left: auto;
+	margin-right:auto;
+	margin-bottom: 15px;
+	text-align:left;
+}
+#tablaNuevoObjeto
+{
+	width: 60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#tablaActualizaObjeto
+{
+	width: 60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#CargaAlumno
+{
+    width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	height: 40px;
+	padding: 10px 3px 10px 3px;
+}
+#divEjemploCarga
+{
+    width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	height: 80px;
+	padding: 3px;
+}
+#tablaInforme
+{
+	width:60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#tablaInformeAgno
+{
+	width:60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.TablaEmpresas 
+{
+	width:30%;
+    margin: opx;
+	padding: 0px;
+	border: 0px;
+}
+#tablaCabezara
+{
+	margin-top:auto;
+}
+
+
+.GridCertificado 
+{ 
+    border: solid 0px #56718c; 
+    height:auto;
+}
+.GridCertificado td
+{
+    border: solid 0px #56718c;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+.GridHeader
+{
+    font-weight: bold;
+    background-color: #1E90FF;
+}
+.GridItem
+{
+    background-color: #1E90FF;
+}
+.GridAltItem
+{
+    background-color: white;
+}
+.gridpager, .gridpager td
+{    
+    border: solid 0px #F8F8FF;
+    text-align: left;
+    color: #1E90FF;    
+    font-weight: bold;
+    text-decoration: none;
+}
+.gridpager a
+{
+    color: #87CEFA;
+    font-weight: normal;
+}
+#empresa
+{
+	width: 360px;
+	height: 260px;
+	padding-left: 110px;
+	padding-right: 20px;
+	text-align:left;
+	float: left;
+}
+#empresa h3, #empresa h4, #aportes h3, #aportes h4, #documentos h3, #documentos h4
+{
+	margin: 5px 0px 5px 0px;
+	border-bottom: solid 1px #1E90FF;
+	text-align: center;
+	padding: 0px;
+}
+#empresa .titCuenta
+{
+	padding-left: 10px;
+	display: inline-block;
+	width: 200px !important;
+}
+#aportes .titCuenta
+{
+	padding-left: 10px;
+	display: inline-block;
+	width: 130px;
+}
+#aportes #boton
+{
+	width: 100%;
+	text-align: center;
+}
+#documentos .titCuenta
+{
+	padding-left: 10px;
+	display: inline-block;
+	width: 130px;
+}
+.MargenIzq
+{
+	padding-left: 10px;
+}
+.MargenIzq2
+{
+	margin-left: 10px;
+}
+#aportes, #documentos
+{
+	width: 360px;
+	padding-left: 20px;
+	padding-right: 110px;
+	text-align:left;
+	float: left;
+}
+#DatosAporte
+{
+	height: 380px;
+}
+#ingresar
+{
+	padding-bottom: 20px;
+	width: 980px !important;
+	text-align: center !important;
+}
+
+#Aporte 
+{
+	width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	padding-left: 124px;
+	padding-right: 124px;
+}
+#AnularAporte
+{
+	width: 258px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	padding-left: 124px;
+	padding-right: 124px;
+	text-align: left;
+}
+#Aporte .Tit, #Aporte .DosPuntos, #Aporte .Dato
+{
+	display: inline-block;
+	text-align: left;
+}
+#Aporte .Tit
+{
+	width: 100px;
+}
+#Aporte .DosPuntos
+{
+	width: 2px;
+}
+#Aporte .Dato
+{
+	width: 145px !important;
+	padding-left: 5px;
+}
+#tablas
+{
+	width: 903px;
+	margin-left:auto;
+	margin-right: auto;
+	height: 370px;
+}
+.AvisoDatosIzq
+{
+	width: 450px;
+	float:left; 
+}
+.AvisoDatosDer
+{
+	width: 450px;
+	float:left; 
+}
+#botonera
+{
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+
+#ficha fieldset.ficha
+{ 
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	border: 1px solid #d2e0fd;
+	padding-bottom: 10px;
+	background-image: url(include/imagenes/css/cmxform-fieldset.gif);
+	background-repeat: repeat-x;
+	background-position: bottom left ;
+}
+#ficha fieldset.ficha legend 
+{
+	color: #4f6b72;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-left: 10px;
+}
+#ficha fieldset.ficha div.separacion {
+	padding: 5px;
+	padding-left: 20px;
+	display: block;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background: url(include/imagenes/css/cmxform-divider.gif) left bottom repeat-x;
+	border: 0px;
+}
+#ficha fieldset.ficha div.separacion table.ficha2Tablas
+{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: Transparent;
+}
+#ficha fieldset.ficha div.separacion table.ficha2Tablas td
+{
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: Transparent;
+}
+#ficha fieldset.ficha div.separacion table.ficha2Tablas td div
+{
+	text-align: left;
+	background-color: Transparent;
+}
+*/

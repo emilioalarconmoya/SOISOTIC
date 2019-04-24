@@ -1,0 +1,126 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="menu.aspx.vb" Inherits="menu" %>
+
+<%--<%@ Register Src="../contenido/ascx/cabeceraUsuario.ascx" TagName="cabecerausuario" TagPrefix="uc2" %>--%>
+<%@ Register Src="~/contenido/ascx/cabeceraUsuario.ascx" TagName="cabeceraUsuario" TagPrefix="uc3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Menú principal</title>
+    <link href="estilo.css" rel="Stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="contenedor">
+    <div id="bannner">
+        <img src="include/imagenes/css/fondos/reporte01.jpg" alt="Otichile" title="Cabecera Otichile"/>
+        <uc3:cabeceraUsuario ID="datos_personales1" runat="server" />
+    </div>
+    <div id="menu">
+        <div id="header">
+            
+        </div>   
+    </div>
+        <div id="Cabecera">
+            <div id="DatosUsuario">
+                <%--<uc3:cabeceraUsuario ID="datos_personales1" runat="server" />--%>
+            </div>
+            <div id="filtros">
+                
+            </div>
+        </div>        
+        <div id="contenido">
+            <%--<div id="navegacion2">
+                <h1>
+                    Menú de Administración
+                </h1>
+                
+                <ul>
+                    <li id="liModAdm" runat="server">
+                        <a href="modulo_administracion/menu_administracion.aspx">
+                            Módulo de administración
+                        </a>
+                    </li>
+                    <li id="liModCue" runat="server">
+                            <a href="modulo_cuentas/home.aspx">
+                               Módulo de cuentas
+                            </a>
+                    </li>
+                    <li id="liModCur" runat="server">
+                            <a href="modulo_cursos/buscador_cursos.aspx" >
+                                Módulo de cursos
+                            </a>
+                    </li>
+                    <li id="liModApo" runat="server">
+                            <a href="modulo_aporte/resumen.aspx">
+                                Módulo de aportes
+                            </a>
+                    </li>
+                    <li id="liModGes" runat="server">
+                            <a href="modulo_gestion_gerencial/reporte_cartera.aspx">
+                                Módulo de gestión gerencial
+                            </a>
+                    </li>
+                    <li >
+                            <a href="fin_sesion.aspx">
+                                Terminar sesión y salir
+                            </a>
+                    </li>
+                </ul>
+            </div>--%>
+            
+            <div id="cssmenu">
+                <h2>
+                    Menú de Administración
+                </h2>
+                
+                <ul >
+                    <li id="liModAdm" runat="server" class='active' >
+                        <a href="modulo_administracion/menu_administracion.aspx">
+                            Módulo de administración
+                        </a>
+                    </li>
+                    <li id="liModCue" runat="server" >
+                            <a href="modulo_cuentas/home.aspx">
+                               Módulo de cuentas
+                            </a>
+                    </li>
+                    <%--<li id="liModCueCurso" runat="server" >
+                            <a href="modulo_cuentas/mantenedor_cursos.aspx">
+                               Ingreso Curso
+                            </a>
+                    </li>--%>
+                    <li id="liModCur" runat="server" >
+                            <a href="modulo_cursos/buscador_cursos.aspx" >
+                                Módulo de cursos
+                            </a>
+                    </li>
+                    <li id="liModApo" runat="server" >
+                            <a href="modulo_aporte/resumen.aspx">
+                                Módulo de aportes
+                            </a>
+                    </li>
+                    <li id="liModGes" runat="server" >
+                            <a href="modulo_gestion_gerencial/reporte_cartera.aspx">
+                                Módulo de gestión gerencial
+                            </a>
+                    </li>
+                    <li >
+                            <a href="fin_sesion.aspx">
+                                Terminar sesión y salir
+                            </a>
+                    </li>                    
+                </ul>
+            </div>
+            
+        </div>
+        <div id="pie">
+            <div class="textoPie" >
+                <asp:Label ID="lblPie"  runat="server"></asp:Label>
+            </div>
+        </div>
+    </div>    
+    </form>
+</body>
+</html>

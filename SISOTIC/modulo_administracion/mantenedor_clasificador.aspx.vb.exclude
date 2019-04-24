@@ -1,0 +1,119 @@
+﻿Imports Clases
+Imports Modulos
+Imports Clases.Web
+Imports System
+Imports System.Data
+Partial Class modulo_administracion_mantenedor_clasificador
+    Inherits System.Web.UI.Page
+    Dim objWeb As New CWeb
+    Dim objSession As CSession
+    Dim objLookups As New Clookups
+    Dim objCSql As New CSql
+    Dim objMantenedorClasificador As CMantenedorClasificador
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Try
+            objWeb = New CWeb
+            objWeb.ChequeaSession(objSession)
+            body.Attributes.Clear()
+            If Not Page.IsPostBack Then
+                'muestra pie de pagina
+                lblPie.Text = Parametros.p_PIE
+            End If
+
+        Catch ex As Exception
+            EnviaError("modulo_administracion_mantenedor_clasificador.aspx.vb:Page_Load-->" & ex.Message)
+        End Try
+    End Sub
+    Public Sub Consultar()
+        Try
+            objMantenedorClasificador = New CMantenedorClasificador
+            objMantenedorClasificador.BajarXml = chkBajarReporte.Checked
+            If Me.txtCodClasificador.Text = "" Then
+                objMantenedorClasificador.CodClasificador = ""
+            Else
+                objMantenedorClasificador.CodClasificador = Me.txtCodClasificador.Text
+            End If
+            If Me.txtNomClasificador.Text = "" Then
+                objMantenedorClasificador.Nombre = ""
+            Else
+                objMantenedorClasificador.Nombre = Me.txtNomClasificador.Text
+            End If
+            If Me.txtRutCliente.Text = "" Then
+                objMantenedorClasificador.RutEmpresa = 0
+            Else
+                objMantenedorClasificador.RutEmpresa = RutUsrALng(Me.txtRutCliente.Text)
+            End If
+
+            Dim dt As DataTable
+            dt = objMantenedorClasificador.Consultar()
+            objWeb.LlenaGrilla(grdConsulta, dt)
+
+            If chkBajarReporte.Checked Then
+                hplBajarReporte.Target = "_Blank"
+                hplBajarReporte.Text = "Descargar archivo"
+                hplBajarReporte.NavigateUrl = objMantenedorClasificador.ArchivoXml
+                Me.hplBajarReporte.Visible = True
+
+            End If
+            objMantenedorClasificador = Nothing
+
+        Catch ex As Exception
+            EnviaError("modulo_administracion_mantenedor_clasificador.aspx.vb:Consultar-->" & ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub btnEditar_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim btnEditar As Button = CType(sender, Button)
+        Dim row As GridViewRow = CType(btnEditar.NamingContainer, GridViewRow)
+        Dim codigo As Label
+        codigo = CType(row.FindControl("lblCodClasificador"), Label)
+        Dim nombre As Label
+        nombre = CType(row.FindControl("lblNomClasificador"), Label)
+        Dim rut As Label
+        rut = CType(row.FindControl("lblRutCliente"), Label)
+        Response.Redirect("mantenedor_clasificador_m.aspx?codClasificador=" & codigo.Text & "&nombre=" & nombre.Text & "&rutCliente=" & rut.Text)
+    End Sub
+
+    Protected Sub btnEliminar_Click1(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim btnEliminar As Button = CType(sender, Button)
+        Dim row As GridViewRow = CType(btnEliminar.NamingContainer, GridViewRow)
+        Dim codigo As Label
+        codigo = CType(row.FindControl("lblCodClasificador"), Label)
+        Dim rut As Label
+        rut = CType(row.FindControl("lblRutCliente"), Label)
+        objMantenedorClasificador = New CMantenedorClasificador
+        objMantenedorClasificador.CodClasificador = codigo.Text
+        objMantenedorClasificador.RutEmpresa = RutUsrALng(rut.Text)
+        objMantenedorClasificador.Eliminar()
+        If objMantenedorClasificador.Eliminar Then
+            Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                       & "alert('¡Registro eliminado exitosamente!');document.location=('./mantenedor_clasificador.aspx');</script>")
+        Else
+            Me.ClientScript.RegisterStartupScript(Me.GetType(), "ClientScript", "<script language='javascript' type='text/javascript'> " _
+                       & "alert('¡Imposible realizar la operación!');document.location=('./mantenedor_clasificador.aspx');</script>")
+        End If
+        objMantenedorClasificador = Nothing
+        ' Consultar()
+
+    End Sub
+
+    Protected Sub btnConsultar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
+        Consultar()
+    End Sub
+
+    Protected Sub grdConsulta_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles grdConsulta.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim rut As Label
+            rut = CType(e.Row.FindControl("lblRutCliente"), Label)
+            rut.Text = RutLngAUsr(rut.Text)
+        End If
+    End Sub
+
+    Protected Sub btnVolver_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Response.Redirect("menu_administracion.aspx")
+    End Sub
+
+    Protected Sub btnAgregar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
+        Response.Redirect("mantenedor_clasificador_m.aspx?nuevo=si")
+    End Sub
+End Class

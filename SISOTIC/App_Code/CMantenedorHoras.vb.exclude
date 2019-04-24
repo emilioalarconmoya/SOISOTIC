@@ -1,0 +1,240 @@
+Imports Clases
+Imports Modulos
+Imports System.Data
+
+Public Class CMantenedorHoras
+    Implements IMantenedor
+    Private mlngFilas As Long
+    Private mobjSql As New CSql
+    'Agno
+    Private mlngAgno As Long
+    'Valor Hora Sence
+    Private mlngValorHoraSence As Long
+    'Vigente (el valor de la hora senece en un año x)
+    Private mblnVigente As Boolean
+    Private mintCodModalidad As Integer
+    Private mstrNombreModalidad As String
+    Private mstrCodigoSence As String
+
+    Public Property Agno() As Long
+        Get
+            Return mlngAgno
+        End Get
+        Set(ByVal value As Long)
+            mlngAgno = value
+        End Set
+    End Property
+    Public Property ValorHoraSence() As Long
+        Get
+            Return mlngValorHoraSence
+        End Get
+        Set(ByVal value As Long)
+            mlngValorHoraSence = value
+        End Set
+    End Property
+    Public Property CodigoSence() As String
+        Get
+            Return mstrCodigoSence
+        End Get
+        Set(ByVal value As String)
+            mstrCodigoSence = value
+        End Set
+    End Property
+    Public Property Vigente() As Boolean
+        Get
+            Return mblnVigente
+        End Get
+        Set(ByVal value As Boolean)
+            mblnVigente = value
+        End Set
+    End Property
+    Public Property CodModalidad() As Integer
+        Get
+            Return mintCodModalidad
+        End Get
+        Set(ByVal value As Integer)
+            mintCodModalidad = value
+        End Set
+    End Property
+
+    'Public Function Actualizar() As Boolean Implements Clases.IMantenedor.Actualizar
+    '    Dim dtTemporal As DataTable
+    '    Dim dr As DataRow
+    '    Try
+    '        mobjSql = New CSql
+    '        If mblnVigente Then
+    '            dtTemporal = mobjSql.s_valor_horas_sence(0, 0)
+    '            For Each dr In dtTemporal.Rows
+    '                If dr("vigente") Then
+    '                    mobjSql.InicioTransaccion()
+    '                    mobjSql.u_valor_hora_sence(dr("agno"), dr("valor"), False)
+    '                    mobjSql.FinTransaccion()
+    '                End If
+    '            Next
+    '        End If
+    '        mobjSql.InicioTransaccion()
+    '        mobjSql.u_valor_hora_sence(mlngAgno, mlngValorHoraSence, mblnVigente)
+    '        mobjSql.FinTransaccion()
+    '        Return True
+    '        mobjSql = Nothing
+    '    Catch ex As Exception
+    '        Return False
+    '        mobjSql = Nothing
+    '    End Try
+    'End Function
+    Public Function Actualizar() As Boolean Implements Clases.IMantenedor.Actualizar
+        Dim dtTemporal As DataTable
+        Dim dr As DataRow
+        Try
+
+            mobjSql.u_valor_hora_sence2(mlngAgno, mlngValorHoraSence, True, mintCodModalidad, mstrCodigoSence)
+
+            Return True
+            mobjSql = Nothing
+        Catch ex As Exception
+            mobjSql = Nothing
+            EnviaError("CMantenedorHoras:Actualizar--> " & ex.Message)
+        End Try
+    End Function
+    Public Function ExisteValorHora() As Boolean
+        Try
+            mobjSql = New CSql
+            If mobjSql.Existe_Valor_Hora_Sence(mlngAgno, mstrCodigoSence) Then
+                Return True
+            Else
+                Return False
+            End If
+            mobjSql = Nothing
+        Catch ex As Exception
+            mobjSql = Nothing
+            Return False
+        End Try
+    End Function
+    'Public Function Insertar() As Boolean Implements Clases.IMantenedor.Insertar
+    '    Dim dtTemporal As DataTable
+    '    Dim dr As DataRow
+    '    Try
+    '        mobjSql = New CSql
+    '        If mblnVigente Then
+    '            dtTemporal = mobjSql.s_valor_horas_sence(0, 0)
+    '            For Each dr In dtTemporal.Rows
+    '                If dr("vigente") Then
+    '                    mobjSql.InicioTransaccion()
+    '                    mobjSql.u_valor_hora_sence(dr("agno"), dr("valor"), False)
+    '                    mobjSql.FinTransaccion()
+    '                End If
+    '            Next
+    '        End If
+    '        mobjSql.InicioTransaccion()
+    '        mobjSql.i_valor_hora_sence(mlngAgno, mlngValorHoraSence, mblnVigente)
+    '        mobjSql.FinTransaccion()
+    '        Return True
+    '        mobjSql = Nothing
+    '    Catch ex As Exception
+    '        Return False
+    '        mobjSql = Nothing
+    '    End Try
+    'End Function
+    Public Function Insertar() As Boolean Implements Clases.IMantenedor.Insertar
+        Dim dtTemporal As DataTable
+        Dim dr As DataRow
+        Try
+
+            mobjSql.i_valor_hora_sence2(mlngAgno, mlngValorHoraSence, True, mintCodModalidad, mstrCodigoSence)
+
+            Return True
+            mobjSql = Nothing
+        Catch ex As Exception
+            mobjSql = Nothing
+            EnviaError("CMantenedorHoras:Insertar--> " & ex.Message)
+        End Try
+    End Function
+
+    Public Property colEliminacion() As System.Collections.ArrayList Implements Clases.IMantenedor.colEliminacion
+        Get
+
+        End Get
+        Set(ByVal value As System.Collections.ArrayList)
+
+        End Set
+    End Property
+
+    'Public Function Consultar() As System.Data.DataTable Implements Clases.IMantenedor.Consultar
+    '    Dim dtConsulta As DataTable
+    '    Try
+    '        mobjSql = New CSql
+    '        dtConsulta = mobjSql.s_valor_horas_sence(mlngAgno, mlngValorHoraSence)
+    '        mlngAgno = dtConsulta.Rows(0)("agno")
+    '        mlngValorHoraSence = dtConsulta.Rows(0)("valor")
+    '        mblnVigente = dtConsulta.Rows(0)("vigente")
+    '        Return dtConsulta
+    '        mobjSql = Nothing
+    '    Catch ex As Exception
+    '        mobjSql = Nothing
+    '    End Try
+    'End Function
+    Public Function Consultar() As System.Data.DataTable Implements Clases.IMantenedor.Consultar
+        Dim dtConsulta As DataTable
+        Try
+            mobjSql = New CSql
+            dtConsulta = mobjSql.s_valor_horas_sence2(mlngAgno, mlngValorHoraSence, mstrCodigoSence)
+            If dtConsulta.Rows.Count > 0 Then
+                mlngAgno = dtConsulta.Rows(0)("agno")
+                mlngValorHoraSence = dtConsulta.Rows(0)("valor")
+                mblnVigente = dtConsulta.Rows(0)("vigente")
+                mstrNombreModalidad = dtConsulta.Rows(0)("nombre")
+                mintCodModalidad = dtConsulta.Rows(0)("cod_modalidad")
+            End If
+            Return dtConsulta
+            mobjSql = Nothing
+        Catch ex As Exception
+            mobjSql = Nothing
+            EnviaError("CMantenedorHoras:Consultar--> " & ex.Message)
+        End Try
+    End Function
+    Public Function Consultar2() As System.Data.DataTable
+        Dim dtConsulta As DataTable
+        Try
+            mobjSql = New CSql
+            dtConsulta = mobjSql.s_valor_horas_sence3(mlngAgno, mintCodModalidad, mstrCodigoSence)
+            If dtConsulta.Rows.Count > 0 Then
+                mlngAgno = dtConsulta.Rows(0)("agno")
+                mlngValorHoraSence = dtConsulta.Rows(0)("valor")
+                mblnVigente = dtConsulta.Rows(0)("vigente")
+                mstrNombreModalidad = dtConsulta.Rows(0)("nombre")
+                mintCodModalidad = dtConsulta.Rows(0)("cod_modalidad")
+                mstrCodigoSence = dtConsulta.Rows(0)("codigo_sence")
+            End If
+            Return dtConsulta
+            mobjSql = Nothing
+        Catch ex As Exception
+            mobjSql = Nothing
+            EnviaError("CMantenedorHoras:Consultar--> " & ex.Message)
+        End Try
+    End Function
+
+    Public Function Eliminar() As Boolean Implements Clases.IMantenedor.Eliminar
+        Try
+            mobjSql = New CSql
+            mobjSql.InicioTransaccion()
+            mobjSql.d_valor_hora_sence(mlngAgno)
+            mobjSql.FinTransaccion()
+            Return True
+            mobjSql = Nothing
+        Catch ex As Exception
+            Return False
+            mobjSql = Nothing
+        End Try
+    End Function
+
+    Public ReadOnly Property Filas() As Integer Implements Clases.IMantenedor.Filas
+        Get
+
+        End Get
+    End Property
+
+    Public Sub InicializarNuevo() Implements Clases.IMantenedor.InicializarNuevo
+
+    End Sub
+
+End Class

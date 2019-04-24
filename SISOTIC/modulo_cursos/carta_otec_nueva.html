@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='../estilo.css' rel='Stylesheet' type='text/css' />
+<title>Carta Otec</title>
+</head>
+
+<body>
+	<div id="Carta">
+    	<div id="CabeceraCarta">
+        	<img src='..\include\imagenes\css\fondos\reporte01.jpg' />
+        </div>
+    	<h1>Orden de compra</h1>
+    	<div id="Membrete">
+        	<span>Srs.</span>
+            <asp:Label ID="lblNombreContacto" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="lblCargoContacto" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="lblRazonSocial" runat="server"></asp:Label>
+            <br  />
+            <span>
+            	Fax
+            </span>
+            <asp:Label ID="lblFax" runat="server"></asp:Label>
+            <br />
+            <span>
+            	Contacto
+            </span>
+            <asp:Label ID="lblContactoAd" runat="server"></asp:Label>
+        </div>
+    	<div id="DatosOC">
+        	<div id="Datos">
+            	<span>
+                	Orden de compra
+                </span>
+                <asp:Label ID="lblCorrelativo" runat="server"></asp:Label>
+                <br />
+            	<span>
+                	Estado curso
+                </span>
+                <asp:Label ID="lblEstadoCurso" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Tipo Actividad
+                </span>
+                <asp:Label ID="lblCodTipoAct" runat="server"></asp:Label>
+                <br />
+                <asp:Label ID="lblNomEjecutivo" runat="server"></asp:Label>
+                <br />
+                <asp:Label ID="lblFechaImp" runat="server"></asp:Label>            
+            </div>
+            <div id="Logo">
+            	<asp:Literal ID="litLogo" runat="server"></asp:Literal>
+            </div>
+        </div>
+        <div id="Alumnos">
+        	<span>
+            	De mi consideración:
+            </span>
+            <p>
+            	A través de la presente, solicito a usted inscribir la siguiente nómina de alumnos en el curso que se detalla a continuación según lo ordenado por nuestro cliente:
+            </p>
+            <asp:GridView ID="grdListadoAlumnos" runat="server" AutoGenerateColumns="False" CssClass="Grid" Width="950px">
+                <Columns>
+                    <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:Label ID="lblContador" runat="server"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Rut">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblRut" runat="server" Text='<%# Bind("rut_alumno") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblNombre" runat="server" Text='<%# Bind("nombre_completo") %>' ></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Franquicia">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblFranquicia" runat="server" Text='<%# Bind("porc_franquicia") %>'></asp:Label>%
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo OTIC">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblCostoOtic" runat="server" Text='<%# Bind("costo_otic") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo empresa">
+                        <ItemTemplate>
+                        	<asp:Label ID="lblCostoEmpresa" runat="server" Text='<%# Bind("gasto_empresa") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <p>
+            	A continuación se presentan los datos relacionados con el curso que deberán ser incluídos obligatoriamente en la glosa de la factura a emitir por su OTEC.
+            <p>
+            </p>
+            	Una vez finalizado el curso deberá emitir una factura correspondiente al monto especificado en la línea "Facturación OTIC <asp:Label ID="lblNomOtic" runat="server"></asp:Label>" de la siguiente tabla, del período respectivo, a nombre de <asp:Label ID="lblRazonSocOtic" runat="server"></asp:Label>, Rut <asp:Label ID="lblRutOtic" runat="server"></asp:Label>, <asp:Label ID="lblDireccOtic" runat="server"></asp:Label>, Santiago.
+            </p>
+            <p>
+            	Por otro lado, deberá emitir factura a nombre de <asp:Label ID="lblRazonSocialCli" runat="server"></asp:Label>, <asp:Label ID="lblRutCli" runat="server"></asp:Label>, <asp:Label ID="lblDireccCli" runat="server"></asp:Label>, por el monto especificado en la línea "Facturación empresa" de la siguiente tabla.
+            </p>
+        </div>
+        <div id="Curso">
+        	<h1>Curso</h1>
+            <div id="DatosCurso">
+            	<h2>Datos del curso</h2>
+                <span>
+                	Nombre
+                </span>
+                <asp:Label ID="lblTNombre" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Correlativo
+                </span>
+                <asp:Label ID="lblTCorrelativo" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Fecha inicio
+                </span>
+                <asp:Label ID="lblTFechaInicio" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Fecha fin
+                </span>
+                <asp:Label ID="lblTFechaTermino" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Duración
+                </span>
+                <asp:Label ID="lblTDuracion" runat="server"></asp:Label>
+                <span>
+                	hrs. (
+                </span>
+                <asp:Label ID="lblTHoras" runat="server"></asp:Label>
+                <span>
+                	hrs. complementarias)
+                </span>
+                <br />
+                <span>
+                	Código Sence
+                </span>
+                <asp:Label ID="lblTCodSence" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Lugar de ejecución
+                </span>
+                <asp:Label ID="lblCursoDirecc" runat="server"></asp:Label>
+                <asp:Label ID="lblNroDireccionCurso" runat="server"></asp:Label>
+                <span>
+                	-
+                </span>
+                <asp:Label ID="lblComuna" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Nº registro Sence
+                </span>
+                <asp:Label ID="lblNumRegistro" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Empresa
+                </span>
+                <asp:Label ID="lblTEmpresa" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Rut empresa
+                </span>
+                <asp:Label ID="lblTRutEmpresa" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Observación
+                </span>
+                <asp:Label ID="lblObservacion" runat="server"></asp:Label>
+                <br />
+            </div>
+            <div id="Valores">
+            	<h2>Valores asociados</h2>
+                <span>
+                	Descuento
+                </span>
+                <asp:Label ID="lblTDescuento" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Participantes
+                </span>
+                <asp:Label ID="lblTParticipantes" runat="server"></asp:Label>
+                <br />
+                <span>
+                	Valor final
+                </span>
+                <asp:Label ID="lblTValorFinal" runat="server"></asp:Label>
+                <br />
+            </div>
+        </div>
+        <div id="Facturacion">
+        	<h1>Facturación</h1>
+            <div id="Otic">
+            	<div>
+                    <span>
+                        Rut
+                    </span>
+                    <asp:Label ID="lblTRutOtic" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Dirección
+                    </span>
+                    <asp:Label ID="lblTDireccionOtic" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Giro
+                    </span>
+                    <asp:Label ID="lblTGiroOtic" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Teléfono
+                    </span>
+                    <asp:Label ID="lblTFonoOtic" runat="server"></asp:Label>
+                    <span>
+                        Fax
+                    </span>
+                    <asp:Label ID="lblTFaxOtic" runat="server"></asp:Label>
+                    <br />
+                </div>
+            	<div>
+                    <asp:Label ID="lblTNombreOtic" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <span>
+                        Monto Otic
+                        <asp:Label ID="lblTOtic" runat="server"></asp:Label>
+                    </span>
+                    <asp:Label ID="lblTCostoOtic" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div id="Empresa">
+            	<div>
+                    <span>
+                        Rut
+                    </span>
+                    <asp:Label ID="lblRutEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Dirección
+                    </span>
+                    <asp:Label ID="lblDireccionEmpresa" runat="server"></asp:Label>
+                    <asp:Label ID="lblNroDireccionEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Giro
+                    </span>
+                    <asp:Label ID="lblGiroEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <span>
+                        Teléfono
+                    </span>
+                    <asp:Label ID="lblFonoEmpresa" runat="server"></asp:Label>
+                    <span>
+                        Fax
+                    </span>
+                    <asp:Label ID="lblFaxEmpresa" runat="server"></asp:Label>
+                    <br />
+                </div>
+            	<div>
+                    <asp:Label ID="lblNombreEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <span>
+                        Monto Otic
+                    </span>
+                    <asp:Label ID="lblTGastoEmpresa" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <br />
+                    <span>
+                        Valor total del curso
+                    </span>
+                    <asp:Label ID="lblTTotalValor" runat="server"></asp:Label>
+                </div>
+                <span>
+                	Costo Otic estimado año 
+                    <asp:Label ID="lblTAgno" runat="server"></asp:Label>
+                    <asp:Label ID="Label21" runat="server"></asp:Label>
+                </span>
+                <span>
+                	<asp:Label ID="lblTCostoOticCompl" runat="server"></asp:Label>
+                </span>
+                <span id="CostoComplementario">
+                	* El Monto del costo complementario estimado debe ser facturado el año
+                	<asp:Label ID="lblAgno" runat="server"></asp:Label>
+                </span>
+            </div>
+        </div>
+        <div id="horario">
+        	<h1>Horario curso</h1>
+            <table runat="server" cellpadding="0" cellspacing="0" class="Grid">
+                <tr>
+                    <th>
+                        Lunes
+                    </th>
+                    <th>
+                        Martes
+                    </th>
+                    <th>
+                        Miércoles
+                    </th>
+                    <th>
+                        Jueves
+                     </th>
+                    <th>
+                        Viernes
+                     </th>
+                    <th>
+                        Sábado
+                    </th>
+                    <th>
+                        Domingo
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <asp:Label ID="lblLunes" runat="server"></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblMartes" runat="server"></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblMiercoles" runat="server"></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblJueves" runat="server"></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblViernes" runat="server"></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblSabado" runat="server"></asp:Label>
+                    </td>
+                    <td valign="top">
+                        <asp:Label ID="lblDomingo" runat="server"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Requisitos">
+        	<h1>Requisitos y condiciones de cancelación</h1>
+            <p>
+            	1° El correspondiente pago de la actividad, se realizará una vez que esta se encuentre finalizada, y los participantes deberán tener registrada una asistencia equivalente al 75% de su duración total. En caso contrario, el importe correspondiente será de cargo de la empresa a la que pertenecen. En caso que el o los cursos sean e-learning o a distancia, se requiere la respectiva Declaración Jurada simple de “Aprobado” o “Reprobado” por los participantes
+            </p>
+            <p>
+            	2° Se considerará actividad no ejecutada, si dentro de los 20 días hábiles siguientes a la fecha de termino del curso, no se han recepcionado la(s) factura(s) y el respectivo Informe de Asistencia. 
+            </p>
+            <p>
+            	3° Será requisito indispensable para la cancelación de la factura, adjuntar a esta el Informe de Asistencia de los alumnos inscritos en esta carta. IMPORTANTE: En caso de participantes que no cumplan con la asistencia mínima exigida por SENCE (Ley 19.518), se deberá rebajar de la facturación del monto franquiciable (OTIC), los valores correspondientes por este concepto. La diferencia producida no afecta a franquicia tributaria, deberá facturarse a la Empresa como gasto. 
+            </p>
+            <p>
+            	4° Las Facturas Costo Otic (Valor Sence) deben enviarse a <asp:Label ID="lblDireccionOtic" runat="server"></asp:Label>, Santiago (Dirección del Otic <asp:Label ID="lblOtic2" runat="server"></asp:Label>), adjuntando copia de esta Orden de Compra. Las facturas de Costo empresa deben enviarse directamente a la dirección de la Empresa:  <asp:Label ID="lblDireccClie" runat="server"></asp:Label>,<asp:Label ID="lblComunaClie" runat="server"></asp:Label>. Con fotocopia al Otic. 
+            </p>
+            <p>
+            	5° Para consultas sobre el pago de facturas por favor comunicarse al fono 4216559 - Señor Luis Nuñez, <a href=mailto:tecnologia@soleduc.cl >tecnologia@soleduc.cl</a>
+            </p>
+            <p>
+            	6º Se debe traer cuarta copia de la factura al momento del pago y sin estos documentos no se recibiran facturas. 
+            </p>
+            <p>
+            	Quedando a su entera disposición para aclarar cualquier duda, 
+            </p>
+            <p>
+            	Saluda atentamente a usted.
+                <br  />
+                <asp:Label ID="lblOtic" runat="server" Font-Bold="True"></asp:Label>
+            </p>
+        </div>
+        <div id="Botonera">
+        	<asp:HyperLink ID="hplGenerar" runat="server" Visible="False">[hplGenerar]</asp:HyperLink>
+            <br />
+            <asp:CheckBox ID="chkGenerar" runat="server" Text="Generar HTML" />
+            <br />
+            <asp:Button ID="btnVolver" runat="server" Text="Volver" />
+        	<asp:Button ID="btnGenerar" runat="server" Text="Generar" />
+            <asp:Button ID="btnGenerarPdf" runat="server" Text="Generar PDF" />
+        </div>
+    </div>
+</body>
+</html>
